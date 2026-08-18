@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+  <defs>
+    <linearGradient id="rep-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#C1682B" />
+      <stop offset="60%" stop-color="#1C1C1E" />
+      <stop offset="100%" stop-color="#121214" />
+    </linearGradient>
+    <radialGradient id="glow-orange" cx="50%" cy="40%" r="50%">
+      <stop offset="0%" stop-color="#D9732B" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#D9732B" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="800" height="450" rx="16" fill="url(#rep-bg)" stroke="#D9732B" stroke-width="2"/>
+  <circle cx="400" cy="200" r="220" fill="url(#glow-orange)" />
+
+  <!-- Wrench & Washer / Appliance Silhouette Vector -->
+  <g transform="translate(400, 185)" fill="none" stroke="#F7B583" stroke-width="3">
+    <!-- Refrigerator/Appliance Outer Outline -->
+    <rect x="-70" y="-70" width="140" height="130" rx="12" fill="rgba(193, 104, 43, 0.2)" stroke-width="3"/>
+    <line x1="-70" y1="-10" x2="70" y2="-10" stroke-width="2"/>
+    <line x1="-45" y1="-50" x2="-45" y2="-25" stroke-width="3" stroke-linecap="round"/>
+    <line x1="-45" y1="10" x2="-45" y2="40" stroke-width="3" stroke-linecap="round"/>
+
+    <!-- Crossing Wrench Icon -->
+    <g transform="rotate(30)">
+      <path d="M-40 -40 L20 20" stroke="#C9A24B" stroke-width="6" stroke-linecap="round"/>
+      <circle cx="-40" cy="-40" r="14" fill="#1C1C1E" stroke="#C9A24B" stroke-width="4"/>
+    </g>
+  </g>
+
+  <!-- Typography Banner -->
+  <text x="400" y="325" font-family="'Oswald', sans-serif" font-size="28" font-weight="600" fill="#F7F5F1" text-anchor="middle">APPLIANCE REPAIR TECH</text>
+  <text x="400" y="355" font-family="sans-serif" font-size="12" letter-spacing="2" font-weight="600" fill="#F7B583" text-anchor="middle">FAST, RELIABLE DIAGNOSIS &amp; REPAIR FOR HOME &amp; COMMERCIAL</text>
+
+  <!-- Placeholder Tag -->
+  <rect x="250" y="395" width="300" height="24" rx="12" fill="#1C1C1E" stroke="#D9732B" stroke-width="1"/>
+  <text x="400" y="411" font-family="sans-serif" font-size="10" font-weight="bold" fill="#F7B583" text-anchor="middle">SVG PLACEHOLDER — APPLIANCE REPAIR HERO</text>
+</svg>

@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+  <defs>
+    <linearGradient id="maint-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3E5C4A" />
+      <stop offset="60%" stop-color="#1C1C1E" />
+      <stop offset="100%" stop-color="#121214" />
+    </linearGradient>
+    <radialGradient id="glow-green" cx="50%" cy="40%" r="50%">
+      <stop offset="0%" stop-color="#4A7A5D" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#4A7A5D" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="800" height="450" rx="16" fill="url(#maint-bg)" stroke="#4A7A5D" stroke-width="2"/>
+  <circle cx="400" cy="200" r="220" fill="url(#glow-green)" />
+
+  <!-- Apartment Building / House Vector Silhouette Motif -->
+  <g transform="translate(400, 180)" fill="none" stroke="#94C4A6" stroke-width="2.5">
+    <!-- Main Apartment Structure -->
+    <rect x="-60" y="-60" width="120" height="120" rx="6" fill="rgba(62, 92, 74, 0.3)" stroke-width="3"/>
+    <!-- Windows Grid -->
+    <rect x="-40" y="-45" width="20" height="25" rx="2" fill="rgba(201, 162, 75, 0.2)" stroke="#C9A24B"/>
+    <rect x="20" y="-45" width="20" height="25" rx="2" fill="rgba(201, 162, 75, 0.2)" stroke="#C9A24B"/>
+    <rect x="-40" y="-5" width="20" height="25" rx="2" fill="rgba(201, 162, 75, 0.2)" stroke="#C9A24B"/>
+    <rect x="20" y="-5" width="20" height="25" rx="2" fill="rgba(201, 162, 75, 0.2)" stroke="#C9A24B"/>
+    <!-- Main Doorway -->
+    <rect x="-12" y="30" width="24" height="30" rx="2" fill="#1C1C1E" stroke="#94C4A6"/>
+
+    <!-- Roof Roofline Accent -->
+    <path d="M-80 -60 L0 -105 L80 -60" stroke="#4A7A5D" stroke-width="4" stroke-linecap="round"/>
+  </g>
+
+  <!-- Typography Banner -->
+  <text x="400" y="325" font-family="'Outfit', sans-serif" font-size="28" font-weight="700" fill="#F7F5F1" text-anchor="middle">APARTMENT &amp; BUILDING MAINTENANCE</text>
+  <text x="400" y="355" font-family="sans-serif" font-size="12" letter-spacing="2" font-weight="600" fill="#94C4A6" text-anchor="middle">DEPENDABLE ONGOING CARE FOR LANDLORDS &amp; PROPERTY MANAGERS</text>
+
+  <!-- Placeholder Tag -->
+  <rect x="230" y="395" width="340" height="24" rx="12" fill="#1C1C1E" stroke="#4A7A5D" stroke-width="1"/>
+  <text x="400" y="411" font-family="sans-serif" font-size="10" font-weight="bold" fill="#94C4A6" text-anchor="middle">SVG PLACEHOLDER — BUILDING MAINTENANCE HERO</text>
+</svg>

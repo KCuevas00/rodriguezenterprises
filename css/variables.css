@@ -1,0 +1,144 @@
+/* ==========================================================================
+   Rodriguez Enterprises - Core CSS Variables & Theme System
+   ========================================================================== */
+
+:root {
+  /* Urban Dusk — Warm Concrete Dark Mode */
+  --color-bg: #1A1713;          /* Warm charcoal — concrete at dusk */
+  --color-surface: #242019;     /* Slightly lifted warm dark surface */
+  --color-surface-elevated: #302C24; /* Warmer raised card surface */
+  --color-surface-glass: rgba(36, 32, 25, 0.90);
+  
+  --color-text-primary: #F5F0E8;   /* Warm off-white, not clinical */
+  --color-text-secondary: #C9C2B0; /* Warm muted tan */
+  --color-text-muted: #8A8272;     /* Warm grey-brown */
+  
+  --color-border: #3A342A;         /* Warm dark border */
+  --color-border-hover: #5C5448;   /* Lifted warm border on hover */
+  
+  /* Warm Amber Gold — brighter, more saturated than old gold */
+  --color-gold: #E8A830;
+  --color-gold-hover: #F5C050;
+  --color-gold-glow: rgba(232, 168, 48, 0.35);
+  
+  /* Default Dynamic Accent (Hub = Amber Gold) */
+  --accent-primary: #E8A830;
+  --accent-hover: #F5C050;
+  --accent-light: #FADA8A;
+  --accent-glow: rgba(232, 168, 48, 0.35);
+  --accent-gradient: linear-gradient(135deg, #E8A830 0%, #B87D18 100%);
+  
+  /* Typography */
+  --font-heading: 'Space Grotesk', 'Manrope', -apple-system, sans-serif;
+  --font-body: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+  
+  /* Elevational Shadows */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.6);
+  --shadow-accent: 0 8px 30px var(--accent-glow);
+  
+  /* Spacing & Borders */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-pill: 9999px;
+  
+  --container-max: 1240px;
+  --header-height: 80px;
+  
+  /* Transitions */
+  --transition-fast: 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-normal: 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Page Theme Overrides & Service-Specific Typography System */
+
+/* 1. Poured Up Vibez Theme & Typography (Satisfy font) */
+body.theme-vibez {
+  --accent-primary: #C4387A;    /* Hot fuchsia-magenta — vivid & bold */
+  --accent-hover: #E04B94;
+  --accent-light: #F09DC5;
+  --accent-glow: rgba(196, 56, 122, 0.45);
+  --accent-gradient: linear-gradient(135deg, #C4387A 0%, #7A1F4A 100%);
+}
+
+body.theme-vibez h1,
+body.theme-vibez h2,
+body.theme-vibez h3,
+body.theme-vibez .hero-title,
+.hero-slide[data-theme="vibez"] .hero-title,
+#card-vibez .service-card-title,
+.tier-header-cell {
+  font-family: 'Satisfy', cursive !important;
+  font-weight: 400 !important;
+  letter-spacing: 0.02em;
+}
+
+.hero-slide[data-theme="vibez"] .hero-title,
+body.theme-vibez .hero-title {
+  font-size: clamp(2.75rem, 5.5vw, 4.25rem);
+  line-height: 1.2;
+}
+
+/* 2. Security Theme & Typography (Cinzel font) */
+body.theme-security {
+  --accent-primary: #2B82C9;    /* Vivid electric cobalt blue */
+  --accent-hover: #3D9BE0;
+  --accent-light: #85C4EC;
+  --accent-glow: rgba(43, 130, 201, 0.45);
+  --accent-gradient: linear-gradient(135deg, #2B82C9 0%, #1A5490 100%);
+}
+
+body.theme-security h1,
+body.theme-security h2,
+body.theme-security h3,
+body.theme-security .hero-title,
+.hero-slide[data-theme="security"] .hero-title,
+#card-security .service-card-title {
+  font-family: 'Cinzel', serif !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* 3. Appliance Repair Theme & Typography (Oswald font) */
+body.theme-repair {
+  --accent-primary: #E85D1A;    /* Vivid deep coral-orange */
+  --accent-hover: #F57030;
+  --accent-light: #F9A875;
+  --accent-glow: rgba(232, 93, 26, 0.45);
+  --accent-gradient: linear-gradient(135deg, #E85D1A 0%, #A33C08 100%);
+}
+
+body.theme-repair h1,
+body.theme-repair h2,
+body.theme-repair h3,
+body.theme-repair .hero-title,
+.hero-slide[data-theme="repair"] .hero-title,
+#card-repair .service-card-title {
+  font-family: 'Oswald', sans-serif !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+/* 4. Building Maintenance Theme & Typography (Outfit font) */
+body.theme-maintenance {
+  --accent-primary: #28A068;    /* Bright emerald green */
+  --accent-hover: #35BF80;
+  --accent-light: #7FDEB0;
+  --accent-glow: rgba(40, 160, 104, 0.45);
+  --accent-gradient: linear-gradient(135deg, #28A068 0%, #166644 100%);
+}
+
+body.theme-maintenance h1,
+body.theme-maintenance h2,
+body.theme-maintenance h3,
+body.theme-maintenance .hero-title,
+.hero-slide[data-theme="maintenance"] .hero-title,
+#card-maintenance .service-card-title {
+  font-family: 'Outfit', sans-serif !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.01em;
+}

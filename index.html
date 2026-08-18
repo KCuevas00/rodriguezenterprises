@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rodriguez Enterprises — One Company. Every Need Handled.</title>
+  <meta name="description" content="Rodriguez Enterprises is your single trusted partner for Poured Up Vibez private bartending, event & property security, appliance repair, and building maintenance.">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+
+  <!-- Header / Navigation -->
+  <header class="site-header" id="main-header">
+    <div class="container header-container">
+      
+      <!-- Left Navigation Items -->
+      <nav class="nav-group nav-group-left" id="desktop-nav-left">
+        <a href="pouredupvibez.html" class="nav-item nav-item-vibez" id="nav-vibez">
+          <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 22h8M12 11v11M19 3l-7 8-7-8h14z"/></svg>
+          <span class="nav-label">Poured Up Vibez</span>
+        </a>
+        <a href="security.html" class="nav-item nav-item-security" id="nav-security">
+          <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <span class="nav-label">Security</span>
+        </a>
+      </nav>
+
+      <!-- Center Logo / Monogram (Serves as Home Link) -->
+      <a href="index.html" class="brand-logo-center" id="header-logo" title="Rodriguez Enterprises - Home">
+        <div class="brand-logo-mark">R</div>
+        <div class="brand-logo-text">
+          <span class="brand-title">RODRIGUEZ</span>
+          <span class="brand-subtitle">ENTERPRISES</span>
+        </div>
+      </a>
+
+      <!-- Right Navigation Items + Contact Button -->
+      <nav class="nav-group nav-group-right" id="desktop-nav-right">
+        <a href="appliancerepair.html" class="nav-item nav-item-repair" id="nav-repair">
+          <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+          <span class="nav-label">Appliance Repair</span>
+        </a>
+        <a href="maintenance.html" class="nav-item nav-item-maintenance" id="nav-maintenance">
+          <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          <span class="nav-label">Maintenance</span>
+        </a>
+        <a href="contact.html" class="btn-contact-nav" id="nav-contact-btn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span>Contact Us</span>
+        </a>
+      </nav>
+
+      <!-- Mobile Hamburger Toggle -->
+      <button class="mobile-nav-toggle" id="mobile-hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-nav-drawer" id="mobile-drawer">
+    <div class="mobile-drawer-brand">
+      <a href="index.html" class="brand-logo-center">
+        <div class="brand-logo-mark">R</div>
+        <div class="brand-logo-text">
+          <span class="brand-title">RODRIGUEZ</span>
+          <span class="brand-subtitle">ENTERPRISES</span>
+        </div>
+      </a>
+    </div>
+
+    <div class="mobile-nav-links">
+      <a href="pouredupvibez.html" class="mobile-nav-item nav-item-vibez">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 22h8M12 11v11M19 3l-7 8-7-8h14z"/></svg>
+        <span>Poured Up Vibez</span>
+      </a>
+      <a href="security.html" class="mobile-nav-item nav-item-security">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <span>Security</span>
+      </a>
+      <a href="appliancerepair.html" class="mobile-nav-item nav-item-repair">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+        <span>Appliance Repair</span>
+      </a>
+      <a href="maintenance.html" class="mobile-nav-item nav-item-maintenance">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        <span>Building Maintenance</span>
+      </a>
+    </div>
+
+    <div style="margin-top: 2rem;">
+      <a href="contact.html" class="btn btn-primary" style="width: 100%;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Contact Us
+      </a>
+    </div>
+  </div>
+
+  <main id="main-content">
+    <!-- Hero Slideshow Section -->
+    <section class="hero-section hero-slideshow" id="hub-hero">
+      <div class="container">
+        
+        <!-- Horizontal Sliding Viewport -->
+        <div class="slides-viewport">
+          <div class="slides-track">
+            
+            <!-- Slide 1: Poured Up Vibez -->
+            <div class="hero-slide" data-slide="0" data-theme="vibez" data-nav="nav-vibez">
+              <div class="hero-content">
+                <div style="display: flex; align-items: center; gap: 0.85rem; margin-bottom: 0.75rem;">
+                  <div class="service-icon-wrap" style="width: 44px; height: 44px; color: #F09DC5; background: rgba(196,56,122,0.2); border-color: #C4387A;">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 22h8M12 11v11M19 3l-7 8-7-8h14z"/></svg>
+                  </div>
+                  <span class="badge" style="background: rgba(196,56,122,0.2); color:#F09DC5; border-color:#C4387A;">Mobile Bartending</span>
+                </div>
+                <h1 class="hero-title">Poured Up Vibez</h1>
+                <p style="font-size: 1.25rem; font-weight: 700; color: #F09DC5; margin-bottom: 0;">Private Mobile Bartending for Events &amp; Parties</p>
+              </div>
+              <div class="hero-slide-image">
+                <img src="assets/images/hero-vibez.svg" alt="Poured Up Vibez Bartending">
+              </div>
+            </div>
+
+            <!-- Slide 2: Security Services -->
+            <div class="hero-slide" data-slide="1" data-theme="security" data-nav="nav-security">
+              <div class="hero-content">
+                <div style="display: flex; align-items: center; gap: 0.85rem; margin-bottom: 0.75rem;">
+                  <div class="service-icon-wrap" style="width: 44px; height: 44px; color: #85C4EC; background: rgba(43,130,201,0.2); border-color: #2B82C9;">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                  </div>
+                  <span class="badge" style="background: rgba(43,130,201,0.2); color:#85C4EC; border-color:#2B82C9;">Event &amp; Property Security</span>
+                </div>
+                <h1 class="hero-title">M.L. Security</h1>
+                <p style="font-size: 1.25rem; font-weight: 700; color: #85C4EC; margin-bottom: 0;">Licensed Security Guards &amp; Protection</p>
+              </div>
+              <div class="hero-slide-image">
+                <img src="assets/images/hero-security.svg" alt="Security Division">
+              </div>
+            </div>
+
+            <!-- Slide 3: Appliance Repair Tech -->
+            <div class="hero-slide" data-slide="2" data-theme="repair" data-nav="nav-repair">
+              <div class="hero-content">
+                <div style="display: flex; align-items: center; gap: 0.85rem; margin-bottom: 0.75rem;">
+                  <div class="service-icon-wrap" style="width: 44px; height: 44px; color: #F9A875; background: rgba(232,93,26,0.2); border-color: #E85D1A;">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                  </div>
+                  <span class="badge" style="background: rgba(232,93,26,0.2); color:#F9A875; border-color:#E85D1A;">Emergency Dispatch</span>
+                </div>
+                <h1 class="hero-title">Appliance Repair</h1>
+                <p style="font-size: 1.25rem; font-weight: 700; color: #F9A875; margin-bottom: 0;">Fast Repair for Broken Home Appliances</p>
+              </div>
+              <div class="hero-slide-image">
+                <img src="assets/images/hero-repair.svg" alt="Appliance Repair Tech">
+              </div>
+            </div>
+
+            <!-- Slide 4: Building Maintenance -->
+            <div class="hero-slide" data-slide="3" data-theme="maintenance" data-nav="nav-maintenance">
+              <div class="hero-content">
+                <div style="display: flex; align-items: center; gap: 0.85rem; margin-bottom: 0.75rem;">
+                  <div class="service-icon-wrap" style="width: 44px; height: 44px; color: #7FDEB0; background: rgba(40,160,104,0.2); border-color: #28A068;">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                  </div>
+                  <span class="badge" style="background: rgba(40,160,104,0.2); color:#7FDEB0; border-color:#28A068;">Property &amp; Facility Care</span>
+                </div>
+                <h1 class="hero-title">Building Maintenance</h1>
+                <p style="font-size: 1.25rem; font-weight: 700; color: #7FDEB0; margin-bottom: 0;">Handyman &amp; Maintenance for Property Owners</p>
+              </div>
+              <div class="hero-slide-image">
+                <img src="assets/images/hero-maintenance.svg" alt="Building Maintenance">
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Slideshow Controls -->
+        <div class="slideshow-controls">
+          <button class="slide-nav-btn prev" id="slide-prev" aria-label="Previous Service Slide">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+          </button>
+          
+          <div class="slideshow-dots">
+            <button class="slide-dot active" data-slide-to="0" title="Poured Up Vibez" aria-label="Poured Up Vibez" style="--dot-color: #C4387A;"></button>
+            <button class="slide-dot" data-slide-to="1" title="Security" aria-label="Security" style="--dot-color: #2B82C9;"></button>
+            <button class="slide-dot" data-slide-to="2" title="Appliance Repair" aria-label="Appliance Repair" style="--dot-color: #E85D1A;"></button>
+            <button class="slide-dot" data-slide-to="3" title="Building Maintenance" aria-label="Building Maintenance" style="--dot-color: #28A068;"></button>
+          </div>
+
+          <button class="slide-nav-btn next" id="slide-next" aria-label="Next Service Slide">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Core Service Directory Grid -->
+    <section class="section bg-surface" id="service-directory">
+      <div class="container">
+        <div class="section-title-wrap">
+          <span class="section-subtitle">Select Your Service</span>
+          <h2>Four Dedicated Divisions.<br>One Uncompromising Standard.</h2>
+          <p>Choose the specialized service you need today. Each vertical is operated by trained professionals focused on your complete satisfaction.</p>
+        </div>
+
+        <div class="grid-2" id="services-grid">
+          
+          <!-- Card 1: Poured Up Vibez -->
+          <div class="service-card" style="--card-accent: #8C3A75; --card-glow: rgba(140, 58, 117, 0.35);" id="card-vibez">
+            <div>
+              <div class="service-card-header">
+                <div class="service-icon-wrap">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 22h8M12 11v11M19 3l-7 8-7-8h14z"/></svg>
+                </div>
+                <span class="badge" style="background: rgba(140,58,117,0.2); color:#D98CBF; border-color:#8C3A75;">Private Bartending</span>
+              </div>
+              <h3 class="service-card-title">Poured Up Vibez</h3>
+              <p class="service-card-desc">Upscale private mobile bartending for weddings, birthdays, corporate celebrations, and private VIP events.</p>
+              <p style="font-family: 'Satisfy', cursive; font-size: 1.1rem; color: #D98CBF; margin-top: 0.5rem; margin-bottom: 0.75rem;">Pouring up the Vibez, Not just the Drinks.</p>
+              
+              <ul class="service-feature-list">
+                <li class="service-feature-item">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                  Silver, Gold, Platinum &amp; Diamond packages
+                </li>
+                <li class="service-feature-item">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                  Custom signature cocktails &amp; printed menus
+                </li>
+                <li class="service-feature-item">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                  Licensed, professional &amp; energetic mixologists
+                </li>
+              </ul>
+            </div>
+            <div>
+              <a href="pouredupvibez.html" class="btn btn-accent-outline" style="width: 100%; border-color:#8C3A75; color:#D98CBF;" id="btn-vibez-page">Explore Poured Up Vibez &rarr;</a>
+            </div>
+          </div>
+
+          <!-- Card 2: Security -->
+          <div class="service-card" style="--card-accent: #3B6C8C; --card-glow: rgba(59, 108, 140, 0.35);" id="card-security">
+            <div>
+              <div class="service-card-header">
+                <div class="service-icon-wrap">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                </div>
+                <span class="badge" style="background: rgba(59,108,140,0.2); color:#8BBADA; border-color:#3B6C8C;">Licensed Security</span>
+              </div>
+              <h3 class="service-card-title">Security Division</h3>
+              <p class="service-card-desc">Comprehensive event security, crowd management, and property patrol provided in direct partnership with licensed professionals at M.L. Security.</p>
+              
+              <ul class="service-feature-list">
+                <li class="service-feature-item">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                  Private event &amp; wedding access control
+                </li>
+                <li class="service-feature-item">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                  Commercial &amp; residential property patrols
+                </li>
+                <li class="service-feature-item">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                  Fully certified &amp; highly trained security guards
+                </li>
+              </ul>
+            </div>
+            <div>
+              <a href="security.html" class="btn btn-accent-outline" style="width: 100%; border-color:#3B6C8C; color:#8BBADA;" id="btn-security-page">Explore Security Services &rarr;</a>
+            </div>
+          </div>
+
+          <!-- Card 3: Appliance Repair -->
+          <div class="service-card" style="--card-accent: #D9732B; --card-glow: rgba(217, 115, 43, 0.35);" id="card-repair">
+            <div>
+              <div class="service-card-header">
+                <div class="service-icon-wrap">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                </div>
+                <span class="badge" style="background: rgba(217,115,43,0.2); color:#F7B583; border-color:#D9732B;">Emergency Repair</span>
+              </div>
+              <h3 class="service-card-title">Appliance Repair Tech</h3>
+              <p class="service-card-desc">Fast, trustworthy diagnosis and repair for refrigerators, washers, dryers, stoves, microwaves, and all major household appliances.</p>
+              
+              <ul class="service-feature-list">
+                <li class="service-feature-item">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                  Same-day &amp; emergency dispatch available
+                </li>
+                <li class="service-feature-item">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                  All major brands &amp; appliance types serviced
+                </li>
+                <li class="service-feature-item">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                  Upfront quotes with no hidden fee surprises
+                </li>
+              </ul>
+            </div>
+            <div>
+              <a href="appliancerepair.html" class="btn btn-accent-outline" style="width: 100%; border-color:#D9732B; color:#F7B583;" id="btn-repair-page">Explore Appliance Repair &rarr;</a>
+            </div>
+          </div>
+
+          <!-- Card 4: Apartment & Building Maintenance -->
+          <div class="service-card" style="--card-accent: #4A7A5D; --card-glow: rgba(74, 122, 93, 0.35);" id="card-maintenance">
+            <div>
+              <div class="service-card-header">
+                <div class="service-icon-wrap">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                </div>
+                <span class="badge" style="background: rgba(74,122,93,0.2); color:#94C4A6; border-color:#4A7A5D;">Property Care</span>
+              </div>
+              <h3 class="service-card-title">Building Maintenance</h3>
+              <p class="service-card-desc">Dependable, low-drama maintenance services tailored for landlords, property managers, and apartment complexes seeking long-term reliability.</p>
+              
+              <ul class="service-feature-list">
+                <li class="service-feature-item">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                  Unit turn-overs &amp; general property fixes
+                </li>
+                <li class="service-feature-item">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                  Ongoing contract care or responsive work orders
+                </li>
+                <li class="service-feature-item">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                  Single accountable point of contact
+                </li>
+              </ul>
+            </div>
+            <div>
+              <a href="maintenance.html" class="btn btn-accent-outline" style="width: 100%; border-color:#4A7A5D; color:#94C4A6;" id="btn-maintenance-page">Explore Building Maintenance &rarr;</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Rodriguez Enterprises -->
+    <section class="section" id="why-choose-us">
+      <div class="container">
+        <div class="section-title-wrap">
+          <span class="section-subtitle">The Rodriguez Promise</span>
+          <h2>Built on Trust, Delivered with Precision</h2>
+          <p>Why clients across Texas choose Rodriguez Enterprises as their multi-service partner of choice.</p>
+        </div>
+
+        <div class="grid-3" id="trust-pillars">
+          <div class="step-card">
+            <div class="step-number" style="color: var(--color-gold);">01</div>
+            <h3 class="step-title">Licensed &amp; Insured</h3>
+            <p>Every job — whether serving drinks at your wedding or patroling a commercial building — is executed under full professional licensing and comprehensive liability insurance.</p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-number" style="color: var(--color-gold);">02</div>
+            <h3 class="step-title">Single Call Convenience</h3>
+            <p>No more juggling four different contractors. Rodriguez Enterprises offers streamlined scheduling, single-invoice convenience, and direct communication.</p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-number" style="color: var(--color-gold);">03</div>
+            <h3 class="step-title">Local &amp; Responsive</h3>
+            <p>We pride ourselves on prompt response times, respectful technician etiquette, and high-energy professional staffing tailored specifically to your event or home.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Universal Quote Section -->
+    <section class="section bg-surface" id="quick-contact">
+      <div class="container container-narrow">
+        <div class="form-card">
+          <div class="section-title-wrap" style="margin-bottom: 2rem;">
+            <span class="section-subtitle">Get In Touch</span>
+            <h2>How Can We Help You Today?</h2>
+            <p>Fill out the form below or call us directly at <strong>(800) 555-0199</strong> for immediate assistance.</p>
+          </div>
+
+          <form class="inquiry-form" id="hub-contact-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="hub-name">Full Name *</label>
+                <input type="text" id="hub-name" class="form-control" placeholder="Jane Doe" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="hub-phone">Phone Number *</label>
+                <input type="tel" id="hub-phone" class="form-control" placeholder="(555) 000-0000" required>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="hub-email">Email Address *</label>
+                <input type="email" id="hub-email" class="form-control" placeholder="jane@example.com" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="service-select">Service Interested In *</label>
+                <select id="service-select" class="form-select" required>
+                  <option value="" disabled selected>Select a Service Door...</option>
+                  <option value="vibez">Poured Up Vibez (Private Bartending)</option>
+                  <option value="security">Security (via M.L. Security)</option>
+                  <option value="repair">Appliance Repair Tech</option>
+                  <option value="maintenance">Apartment &amp; Building Maintenance</option>
+                  <option value="general">General Corporate Inquiry</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="hub-notes">Details / Project Description</label>
+              <textarea id="hub-notes" class="form-control" rows="4" placeholder="Tell us about your event date, appliance issue, or property management needs..."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width: 100%;" id="hub-submit-btn">Send Inquiry to Rodriguez Enterprises</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer" id="main-footer">
+    <div class="container">
+      
+      <!-- Footer Service Switcher Strip -->
+      <div class="footer-service-switcher" id="footer-switcher">
+        <span class="switcher-title">Looking for a specific service page?</span>
+        <div class="switcher-pills">
+          <a href="pouredupvibez.html" class="pill-item" style="border-color:#8C3A75; color:#D98CBF;">Bartending</a>
+          <a href="security.html" class="pill-item" style="border-color:#3B6C8C; color:#8BBADA;">Security</a>
+          <a href="appliancerepair.html" class="pill-item" style="border-color:#D9732B; color:#F7B583;">Appliance Repair</a>
+          <a href="maintenance.html" class="pill-item" style="border-color:#4A7A5D; color:#94C4A6;">Maintenance</a>
+        </div>
+      </div>
+
+      <div class="footer-grid">
+        <div>
+          <a href="index.html" class="brand-logo">
+            <div class="brand-logo-mark">R</div>
+            <div class="brand-logo-text">
+              <span class="brand-title">RODRIGUEZ</span>
+              <span class="brand-subtitle">ENTERPRISES</span>
+            </div>
+          </a>
+          <p class="footer-brand-desc">One company delivering top-tier private bartending, licensed event security, expert appliance repair, and building maintenance.</p>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Service Pages</h4>
+          <ul class="footer-links">
+            <li><a href="pouredupvibez.html">Poured Up Vibez</a></li>
+            <li><a href="security.html">M.L. Security Partner</a></li>
+            <li><a href="appliancerepair.html">Appliance Repair Tech</a></li>
+            <li><a href="maintenance.html">Building Maintenance</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Company</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Hub Directory</a></li>
+            <li><a href="contact.html">General Contact</a></li>
+            <li><a href="#why-choose-us">Why Choose Us</a></li>
+            <li><a href="tel:18005550199">Emergency Call</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Direct Contact</h4>
+          <ul class="footer-links" style="color: var(--color-text-secondary); font-size: 0.95rem;">
+            <li style="margin-bottom: 0.5rem;"><strong>Phone:</strong> (800) 555-0199</li>
+            <li style="margin-bottom: 0.5rem;"><strong>Email:</strong> info@rodriguezenterprises.com</li>
+            <li style="margin-bottom: 0.5rem;"><strong>Hours:</strong> Mon – Sat: 8am – 8pm</li>
+            <li><li style="margin-top: 0.5rem;"><span class="badge badge-gold">Licensed &amp; Insured</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 Rodriguez Enterprises. All rights reserved. Security provided in partnership with M.L. Security.</div>
+        <div>Built with static HTML/CSS/JS (Zero AI imagery).</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/nav.js"></script>
+  <script src="js/forms.js"></script>
+</body>
+</html>
