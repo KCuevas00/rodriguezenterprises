@@ -52,11 +52,92 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // ---- 3. Active Link State Auto-Detection ----
   var currentPath = window.location.pathname.split('/').pop() || 'index.html';
-  document.querySelectorAll('.nav-link-item, .mobile-nav-item').forEach(function (link) {
+  document.querySelectorAll('.nav-link-item').forEach(function (link) {
     var href = link.getAttribute('href');
     if (href === currentPath || (currentPath === '' && href === 'index.html')) {
       link.classList.add('active');
     }
+  });
+
+  // ---- 4. Hero Doors Video Hover Playback ----
+  document.querySelectorAll('.door').forEach(function (door) {
+    var video = door.querySelector('.door-video');
+    if (!video) return;
+
+    door.addEventListener('mouseenter', function () {
+      var playPromise = video.play();
+      if (playPromise !== undefined) {
+        playPromise.catch(function () {
+          // Fallback if browser policies restrict
+        });
+      }
+    });
+
+  // ---- 5. Package Layout Switcher & Guest Slider (Poured Up Vibez) ----
+  var switchBtns = document.querySelectorAll('.layout-switch-btn');
+  var cardsView = document.getElementById('view-cards');
+  var sliderView = document.getElementById('view-slider');
+  var tableWrap = document.getElementById('view-table');
+
+  if (switchBtns.length > 0) {
+    switchBtns.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        switchBtns.forEach(function (b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+
+        var target = btn.getAttribute('data-view');
+        if (cardsView) cardsView.style.display = target === 'cards' ? 'grid' : 'none';
+        if (sliderView) sliderView.style.display = target === 'slider' ? 'block' : 'none';
+        if (tableWrap) tableWrap.style.display = target === 'table' ? 'block' : 'none';
+      });
+    });
+  }
+
+  var guestSlider = document.getElementById('guest-slider');
+  var guestOutput = document.getElementById('guest-output');
+  var recommendedPkg = document.getElementById('recommended-pkg-name');
+  var recommendedPrice = document.getElementById('recommended-pkg-price');
+  var recommendedDesc = document.getElementById('recommended-pkg-desc');
+
+  if (guestSlider && guestOutput) {
+    guestSlider.addEventListener('input', function () {
+      var count = parseInt(guestSlider.value, 10);
+      guestOutput.textContent = count + ' Guests';
+
+      if (count <= 60) {
+        if (recommendedPkg) recommendedPkg.textContent = 'Silver Package';
+        if (recommendedPrice) recommendedPrice.textContent = '$600';
+        if (recommendedDesc) recommendedDesc.textContent = '4 Hours • 1 Licensed Bartender • 2 Signature Drinks';
+      } else if (count <= 75) {
+        if (recommendedPkg) recommendedPkg.textContent = 'Gold Package (Most Popular)';
+        if (recommendedPrice) recommendedPrice.textContent = '$800';
+        if (recommendedDesc) recommendedDesc.textContent = '4 Hours • 1 Licensed Bartender • 3 Signature Drinks';
+      } else if (count <= 100) {
+        if (recommendedPkg) recommendedPkg.textContent = 'Platinum Package';
+        if (recommendedPrice) recommendedPrice.textContent = '$950';
+        if (recommendedDesc) recommendedDesc.textContent = '5 Hours • 2 Licensed Bartenders • 4 Signature Drinks • Premium Garnish & Decor';
+      } else {
+        if (recommendedPkg) recommendedPkg.textContent = 'Diamond Package';
+        if (recommendedPrice) recommendedPrice.textContent = '$1,200';
+        if (recommendedDesc) recommendedDesc.textContent = '5 Hours • 2 Licensed Bartenders • 4 Signature Drinks • Garnish, Decor & Choice of Add-on';
+      }
+    });
+  }
+
+  // Auto-fill package select dropdown when clicking "Select Package"
+  document.querySelectorAll('[data-select-pkg]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var pkgName = btn.getAttribute('data-select-pkg');
+      var pkgSelect = document.getElementById('package');
+      if (pkgSelect) {
+        for (var i = 0; i < pkgSelect.options.length; i++) {
+          if (pkgSelect.options[i].text.toLowerCase().includes(pkgName.toLowerCase())) {
+            pkgSelect.selectedIndex = i;
+            break;
+          }
+        }
+      }
+    });
   });
 
   // ---- Generic form handling (no backend wired yet) ----
