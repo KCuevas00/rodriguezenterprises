@@ -16,43 +16,70 @@ document.addEventListener('DOMContentLoaded', function () {
   window.addEventListener('scroll', updateHeaderScroll, { passive: true });
   updateHeaderScroll();
 
-  // ---- 2. Mobile Nav Drawer Toggle ----
+  // ---- 2. Mobile Nav Drawer & Backdrop Toggle ----
   var mobileToggle = document.querySelector('.mobile-nav-toggle');
   var mobileDrawer = document.querySelector('.mobile-nav-drawer');
+  var mobileBackdrop = document.querySelector('.mobile-drawer-backdrop');
+  var mobileCloseBtn = document.querySelector('.mobile-drawer-close');
 
-  if (mobileToggle && mobileDrawer) {
-    mobileToggle.addEventListener('click', function () {
-      var isOpen = mobileDrawer.classList.toggle('open');
-      mobileToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-      document.body.style.overflow = isOpen ? 'hidden' : '';
+  function openDrawer() {
+    if (mobileDrawer) mobileDrawer.classList.add('open');
+    if (mobileBackdrop) mobileBackdrop.classList.add('open');
+    if (mobileToggle) mobileToggle.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
+  }
 
-      var svg = mobileToggle.querySelector('svg');
-      if (svg) {
-        if (isOpen) {
-          svg.innerHTML = '<line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line>';
-        } else {
-          svg.innerHTML = '<line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line>';
-        }
+  function closeDrawer() {
+    if (mobileDrawer) mobileDrawer.classList.remove('open');
+    if (mobileBackdrop) mobileBackdrop.classList.remove('open');
+    if (mobileToggle) mobileToggle.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  }
+
+  if (mobileToggle) {
+    mobileToggle.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var isOpen = mobileDrawer && mobileDrawer.classList.contains('open');
+      if (isOpen) {
+        closeDrawer();
+      } else {
+        openDrawer();
       }
     });
+  }
 
-    // Close drawer when clicking any link inside
+  if (mobileCloseBtn) {
+    mobileCloseBtn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      closeDrawer();
+    });
+  }
+
+  if (mobileBackdrop) {
+    mobileBackdrop.addEventListener('click', function () {
+      closeDrawer();
+    });
+  }
+
+  // Close on ESC key
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' || e.key === 'Esc') {
+      closeDrawer();
+    }
+  });
+
+  // Close drawer when clicking any link inside
+  if (mobileDrawer) {
     mobileDrawer.querySelectorAll('a').forEach(function (link) {
       link.addEventListener('click', function () {
-        mobileDrawer.classList.remove('open');
-        document.body.style.overflow = '';
-        mobileToggle.setAttribute('aria-expanded', 'false');
-        var svg = mobileToggle.querySelector('svg');
-        if (svg) {
-          svg.innerHTML = '<line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line>';
-        }
+        closeDrawer();
       });
     });
   }
 
   // ---- 3. Active Link State Auto-Detection ----
   var currentPath = window.location.pathname.split('/').pop() || 'index.html';
-  document.querySelectorAll('.nav-link-item').forEach(function (link) {
+  document.querySelectorAll('.nav-link-item, .mobile-nav-item, .mobile-service-card').forEach(function (link) {
     var href = link.getAttribute('href');
     if (href === currentPath || (currentPath === '' && href === 'index.html')) {
       link.classList.add('active');
@@ -68,10 +95,15 @@ document.addEventListener('DOMContentLoaded', function () {
       var playPromise = video.play();
       if (playPromise !== undefined) {
         playPromise.catch(function () {
-          // Fallback if browser policies restrict
+          // Fallback if autoplay policies restrict
         });
       }
     });
+
+    door.addEventListener('mouseleave', function () {
+      video.pause();
+    });
+  });
 
   // ---- 5. Package Layout Switcher & Guest Slider (Poured Up Vibez) ----
   var switchBtns = document.querySelectorAll('.layout-switch-btn');
@@ -140,10 +172,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  // ---- Generic form handling (no backend wired yet) ----
-  // Any <form data-form> on the site will show a local success message
-  // instead of actually submitting. Swap this for a real endpoint
-  // (e.g. Formspree, or a server route) when ready to go live.
+  // ---- 6. Generic form handling ----
   document.querySelectorAll('form[data-form]').forEach(function (form) {
     form.addEventListener('submit', function (e) {
       e.preventDefault();

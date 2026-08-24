@@ -31,7 +31,7 @@
 
     <span class="island-divider"></span>
 
-    <!-- Nav Links -->
+    <!-- Nav Links (Desktop) -->
     <nav class="nav-group">
       <a href="about.html" class="nav-link-item">About</a>
 
@@ -42,8 +42,117 @@
       </a>
     </nav>
 
+    <!-- Mobile Hamburger Toggle Button -->
+    <button class="mobile-nav-toggle" id="mobile-nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="4" y1="7" x2="20" y2="7"></line>
+        <line x1="4" y1="12" x2="20" y2="12"></line>
+        <line x1="4" y1="17" x2="20" y2="17"></line>
+      </svg>
+    </button>
+
   </div>
 </header>
+
+<!-- Mobile Drawer Backdrop Overlay -->
+<div class="mobile-drawer-backdrop" id="mobile-drawer-backdrop" aria-hidden="true"></div>
+
+<!-- Mobile Navigation Drawer -->
+<div class="mobile-nav-drawer" id="mobile-nav-drawer" role="dialog" aria-modal="true" aria-label="Navigation Menu">
+  
+  <div class="mobile-drawer-header">
+    <a href="index.html" class="brand-logo" title="Rodriguez Enterprises">
+      <img src="photos/logo.jpeg" alt="Rodriguez Enterprises" class="brand-logo-img">
+      <div class="brand-logo-text">
+        <span class="brand-title">RODRIGUEZ</span>
+        <span class="brand-subtitle">ENTERPRISES</span>
+      </div>
+    </a>
+    <button class="mobile-drawer-close" id="mobile-drawer-close" aria-label="Close menu">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </button>
+  </div>
+
+  <div>
+    <div class="mobile-drawer-section-title">Our 4 Crafts &amp; Services</div>
+    <div class="mobile-services-grid">
+      
+      <a href="poured-up-vibez.html" class="mobile-service-card vibez">
+        <div class="service-card-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 22h8M12 11v11M19 3l-7 8-7-8h14z"/></svg>
+        </div>
+        <div class="service-card-info">
+          <span class="service-card-title">Poured Up Vibez</span>
+          <span class="service-card-desc">Private Bartending</span>
+        </div>
+        <svg class="service-card-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+      </a>
+
+      <a href="security.html" class="mobile-service-card security active">
+        <div class="service-card-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div class="service-card-info">
+          <span class="service-card-title">Security</span>
+          <span class="service-card-desc">Events &amp; Properties</span>
+        </div>
+        <svg class="service-card-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+      </a>
+
+      <a href="appliance-repair.html" class="mobile-service-card repair">
+        <div class="service-card-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+        </div>
+        <div class="service-card-info">
+          <span class="service-card-title">Appliance Repair</span>
+          <span class="service-card-desc">Fast Diagnostic &amp; Fix</span>
+        </div>
+        <svg class="service-card-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+      </a>
+
+      <a href="maintenance.html" class="mobile-service-card maint">
+        <div class="service-card-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <div class="service-card-info">
+          <span class="service-card-title">Maintenance</span>
+          <span class="service-card-desc">Apartments &amp; Buildings</span>
+        </div>
+        <svg class="service-card-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+      </a>
+
+    </div>
+  </div>
+
+  <div>
+    <div class="mobile-drawer-section-title">Explore &amp; Connect</div>
+    <div class="mobile-nav-links">
+      <a href="about.html" class="mobile-nav-item">
+        <span>About Us</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+      </a>
+      <a href="contact.html" class="mobile-nav-item btn-contact-drawer">
+        <span>Contact &amp; Quotes</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <div class="mobile-drawer-footer">
+    <a href="tel:+10000000000" class="drawer-contact-action">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      <span>(000) 000-0000</span>
+    </a>
+    <a href="mailto:hello@rodriguezenterprises.com" class="drawer-contact-action">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      <span>hello@rodriguezenterprises.com</span>
+    </a>
+  </div>
+
+</div>
 
 <!-- ============ HERO ============ -->
 <section class="page-hero">
@@ -163,7 +272,7 @@
     <div class="footer-grid">
       <div>
         <a href="index.html" class="brand-logo" style="margin-bottom: 1rem;" title="Rodriguez Enterprises">
-          <div class="brand-logo-mark">R</div>
+          <img src="photos/logo.jpeg" alt="Rodriguez Enterprises" class="brand-logo-img footer-logo-img">
           <div class="brand-logo-text">
             <span class="brand-title">RODRIGUEZ</span>
             <span class="brand-subtitle">ENTERPRISES</span>
