@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>About | Rodriguez Enterprises</title>
-<meta name="description" content="Rodriguez Enterprises is four services built on one standard of care: bartending, security, appliance repair, and property maintenance.">
+<meta name="description" content="One company, four specialized crafts: private bartending, certified security, appliance repair, and property maintenance.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&family=Manrope:wght@300;400;500;600;700;800&family=Oswald:wght@500;600&family=Outfit:wght@500;600;700&family=Satisfy&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
@@ -18,14 +18,16 @@
     <!-- Sleek Back Button -->
     <a href="index.html" class="island-back-btn" title="Back to All Doors">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
-      <span>Back</span>
+      <span>Home</span>
     </a>
 
     <span class="island-divider"></span>
 
     <!-- Brand Logo -->
-      <img src="photos/logo.jpeg" alt="Rodriguez Enterprises" class="brand-logo-img">
+    <a href="index.html" class="brand-logo" title="Rodriguez Enterprises">
+      <img src="photos/logo.PNG" alt="Rodriguez Enterprises" class="brand-logo-img">
       <span class="brand-title">RODRIGUEZ</span>
+    </a>
 
     <span class="island-divider"></span>
 
@@ -42,88 +44,195 @@
     <!-- Mobile Hamburger Toggle Button -->
     <button class="mobile-nav-toggle" id="mobile-nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="4" y1="7" x2="20" y2="7"></line>
+        <line x1="4" y1="12" x2="20" y2="12"></line>
+        <line x1="4" y1="17" x2="20" y2="17"></line>
+      </svg>
+    </button>
+
+  </div>
+</header>
+
 <!-- Mobile Drawer Backdrop Overlay -->
 <div class="mobile-drawer-backdrop" id="mobile-drawer-backdrop" aria-hidden="true"></div>
 
-    <div class="eyebrow">About Us</div>
-    <h1>One company. Four crafts.</h1>
-    <p class="lede" style="margin-top:20px;">Rodriguez Enterprises started from a simple idea: the people you trust with your biggest night, your property, and your home shouldn't have to be strangers to each other.</p>
+<!-- Mobile Navigation Drawer -->
+<div class="mobile-nav-drawer" id="mobile-nav-drawer" role="dialog" aria-modal="true" aria-label="Navigation Menu">
+  <div class="mobile-drawer-header">
+    <a href="index.html" class="brand-logo" title="Rodriguez Enterprises">
+      <img src="photos/logo.PNG" alt="Rodriguez Enterprises" class="brand-logo-img">
+      <div class="brand-logo-text">
+        <span class="brand-title">RODRIGUEZ</span>
+        <span class="brand-subtitle">ENTERPRISES</span>
+      </div>
+    </a>
+    <button class="mobile-drawer-close" id="mobile-drawer-close" aria-label="Close menu">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </button>
+  </div>
+
+  <div>
+    <div class="mobile-drawer-section-title">Our 4 Crafts &amp; Services</div>
+    <div class="mobile-services-grid">
+      <a href="poured-up-vibez.html" class="mobile-service-card vibez">
+        <div class="service-card-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 22h8M12 11v11M19 3l-7 8-7-8h14z"/></svg>
+        </div>
+        <div class="service-card-info">
+          <span class="service-card-title">Poured Up Vibez</span>
+          <span class="service-card-desc">Private Bartending</span>
+        </div>
+        <svg class="service-card-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+      </a>
+
+      <a href="security.html" class="mobile-service-card security">
+        <div class="service-card-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div class="service-card-info">
+          <span class="service-card-title">Security</span>
+          <span class="service-card-desc">Events &amp; Properties</span>
+        </div>
+        <svg class="service-card-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+      </a>
+
+      <a href="appliance-repair.html" class="mobile-service-card repair">
+        <div class="service-card-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+        </div>
+        <div class="service-card-info">
+          <span class="service-card-title">Appliance Repair</span>
+          <span class="service-card-desc">Fast Diagnostic &amp; Fix</span>
+        </div>
+        <svg class="service-card-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+      </a>
+
+      <a href="maintenance.html" class="mobile-service-card maint">
+        <div class="service-card-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <div class="service-card-info">
+          <span class="service-card-title">Maintenance</span>
+          <span class="service-card-desc">Apartments &amp; Buildings</span>
+        </div>
+        <svg class="service-card-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <div>
+    <div class="mobile-drawer-section-title">Explore &amp; Connect</div>
+    <div class="mobile-nav-links">
+      <a href="about.html" class="mobile-nav-item active">
+        <span>About Us</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+      </a>
+      <a href="contact.html" class="mobile-nav-item btn-contact-drawer">
+        <span>Contact &amp; Quotes</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <div class="mobile-drawer-footer">
+    <a href="tel:+10000000000" class="drawer-contact-action">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      <span>(000) 000-0000</span>
+    </a>
+    <a href="mailto:hello@rodriguezenterprises.com" class="drawer-contact-action">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      <span>hello@rodriguezenterprises.com</span>
+    </a>
+  </div>
+</div>
+
+<!-- ============ HERO ============ -->
+<section class="page-hero">
+  <div class="container" style="max-width: 860px;">
+    <div class="eyebrow">The Master Brand</div>
+    <h1 style="font-size: clamp(2.4rem, 5vw, 4rem); line-height: 1.1; margin-bottom: 1rem;">One Company.<br><span style="color: var(--gold);">Four Dedicated Crafts.</span></h1>
+    <p class="lede" style="font-size: 1.15rem; color: var(--paper-dim); max-width: 620px;">
+      Built on a single standard of excellence — licensed, accountable, and uncompromising across every experience.
+    </p>
   </div>
 </section>
 
-<!-- ============ STORY ============ -->
-<section>
+<!-- ============ ESSENTIAL PILLARS (CONCISE & LUXURY) ============ -->
+<section style="padding: 40px 0 60px;">
   <div class="container">
-    <div class="grid-2">
-      <div>
-        <div class="eyebrow">Our Story</div>
-        <h2>Built one service at a time.</h2>
-        <p>Rodriguez Enterprises grew out of Poured Up Vibez, a private bartending business built on the idea that great service is about more than what's in the glass. As the reputation for reliability grew, so did the ask — for security at those same events, for someone to fix a broken appliance, for a maintenance partner who actually shows up.</p>
-        <p>Rather than staying in one lane, Rodriguez Enterprises became the answer to all of it: one company, held to one standard, across four very different crafts.</p>
+    <div class="grid-2" style="gap: 2rem;">
+      <div class="card" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); padding: 2.2rem; border-radius: 16px;">
+        <div class="eyebrow" style="margin-bottom: 8px;">The Standard</div>
+        <h3 style="font-size: 1.4rem; color: #ffffff; margin-bottom: 0.5rem;">One Trusted Partner</h3>
+        <p style="margin: 0; font-size: 0.95rem; line-height: 1.6; color: var(--paper-dim);">From upscale celebrations to property protection and critical repairs, you work with one accountable team held to the highest standard.</p>
       </div>
-      <div>
-        <div class="eyebrow">What Stays the Same</div>
-        <h2>Licensed. Local. Accountable.</h2>
-        <p>Every service under Rodriguez Enterprises is run by trained, licensed professionals. Whether it's a bartender pouring your signature drink or a tech fixing your fridge, the standard doesn't change — show up, do it right, leave things better than you found them.</p>
+
+      <div class="card" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); padding: 2.2rem; border-radius: 16px;">
+        <div class="eyebrow" style="margin-bottom: 8px;">Accountability</div>
+        <h3 style="font-size: 1.4rem; color: #ffffff; margin-bottom: 0.5rem;">Licensed &amp; Insured</h3>
+        <p style="margin: 0; font-size: 0.95rem; line-height: 1.6; color: var(--paper-dim);">Every technician, bartender, and security specialist arrives fully certified, punctual, and equipped to execute flawlessly.</p>
       </div>
     </div>
   </div>
 </section>
 
-<div class="container"><div class="divider"></div></div>
-
-<!-- ============ FOUR SERVICES ============ -->
-<section>
+<!-- ============ FOUR SERVICES GATEWAY ============ -->
+<section style="padding: 60px 0 80px; border-top: 1px solid var(--line);">
   <div class="container">
-    <div class="section-head center">
-      <div class="eyebrow center" style="justify-content:center;">What We Do</div>
-      <h2>Four services, one company.</h2>
+    <div class="section-head center" style="margin-bottom: 2.5rem;">
+      <div class="eyebrow center" style="justify-content:center;">Explore Crafts</div>
+      <h2>Our 4 Divisions</h2>
     </div>
     <div class="route-grid">
       <a href="poured-up-vibez.html" class="route-card vibez">
         <h3>Poured Up Vibez</h3>
-        <p>Private bartending for events of every size.</p>
-        <span class="go">Learn more →</span>
+        <p>Upscale private bartending &amp; custom cocktail curation.</p>
+        <span class="go">Enter Vibez →</span>
       </a>
       <a href="security.html" class="route-card security">
         <h3>Security</h3>
-        <p>Trained security for events and properties.</p>
-        <span class="go">Learn more →</span>
+        <p>Certified protection for events, VIPs, and facilities.</p>
+        <span class="go">Enter Security →</span>
       </a>
       <a href="appliance-repair.html" class="route-card repair">
         <h3>Appliance Repair</h3>
-        <p>Fast repair for washers, stoves, fridges, and more.</p>
-        <span class="go">Learn more →</span>
+        <p>Fast diagnostics &amp; precision household fixes.</p>
+        <span class="go">Enter Repair →</span>
       </a>
       <a href="maintenance.html" class="route-card maint">
         <h3>Maintenance</h3>
-        <p>Ongoing care for apartments and buildings.</p>
-        <span class="go">Learn more →</span>
+        <p>Dedicated building, turnover &amp; property upkeep.</p>
+        <span class="go">Enter Maintenance →</span>
       </a>
     </div>
   </div>
 </section>
 
-<!-- ============ CTA ============ -->
-<section style="padding:70px 0; border-top:1px solid var(--line); background:var(--ink-soft);">
-  <div class="container" style="display:flex; align-items:center; justify-content:space-between; gap:24px; flex-wrap:wrap;">
+<!-- ============ SLEEK CTA STRIP ============ -->
+<section style="padding: 60px 0; border-top: 1px solid var(--line); background: var(--ink-soft);">
+  <div class="container" style="display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap;">
     <div>
-      <h2 style="margin-bottom:6px;">Have a question first?</h2>
-      <p style="margin:0;">We're happy to talk through which service fits before you commit to anything.</p>
+      <h2 style="margin-bottom: 4px; font-size: 1.6rem;">Let's work together.</h2>
+      <p style="margin: 0; font-size: 0.95rem;">Have questions or need a custom quote? We're ready.</p>
     </div>
-    <a href="contact.html" class="btn btn-primary">Contact us <span class="btn-arrow">→</span></a>
+    <a href="contact.html" class="btn btn-primary">Get In Touch <span class="btn-arrow">→</span></a>
   </div>
 </section>
 
+<!-- ============ SITE FOOTER ============ -->
 <footer class="site-footer">
   <div class="container">
     <div class="footer-grid">
       <div>
-        <a href="index.html" class="brand-logo" style="margin-bottom: 1rem;" title="Rodriguez Enterprises">
-          <img src="photos/logo.jpeg" alt="Rodriguez Enterprises" class="brand-logo-img footer-logo-img">
+        <a href="index.html" class="footer-brand-lockup" title="Rodriguez Enterprises">
+          <img src="photos/logo.PNG" alt="Rodriguez Enterprises" class="brand-logo-img footer-logo-img">
           <div class="brand-logo-text">
             <span class="brand-title">RODRIGUEZ</span>
             <span class="brand-subtitle">ENTERPRISES</span>
+          </div>
         </a>
         <p style="max-width:280px; font-size: 0.88rem; color: var(--paper-dim);">One company, four crafts — private bartending, security, appliance repair, and property maintenance.</p>
       </div>

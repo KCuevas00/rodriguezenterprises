@@ -86,26 +86,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
-  // ---- 4. Hero Doors Video Hover Playback ----
-  document.querySelectorAll('.door').forEach(function (door) {
-    var video = door.querySelector('.door-video');
-    if (!video) return;
-
-    door.addEventListener('mouseenter', function () {
-      var playPromise = video.play();
-      if (playPromise !== undefined) {
-        playPromise.catch(function () {
-          // Fallback if autoplay policies restrict
-        });
-      }
-    });
-
-    door.addEventListener('mouseleave', function () {
-      video.pause();
-    });
-  });
-
-  // ---- 5. Package Layout Switcher & Guest Slider (Poured Up Vibez) ----
+  // ---- 4. Package Layout Switcher & Guest Slider (Poured Up Vibez) ----
   var switchBtns = document.querySelectorAll('.layout-switch-btn');
   var cardsView = document.getElementById('view-cards');
   var sliderView = document.getElementById('view-slider');
