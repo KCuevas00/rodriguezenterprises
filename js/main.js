@@ -77,9 +77,9 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // ---- 3. Active Link State Auto-Detection ----
+  // ---- 3. Active Link State Auto-Detection (Desktop Only) ----
   var currentPath = window.location.pathname.split('/').pop() || 'index.html';
-  document.querySelectorAll('.nav-link-item, .mobile-nav-item, .mobile-service-card').forEach(function (link) {
+  document.querySelectorAll('.nav-link-item').forEach(function (link) {
     var href = link.getAttribute('href');
     if (href === currentPath || (currentPath === '' && href === 'index.html')) {
       link.classList.add('active');

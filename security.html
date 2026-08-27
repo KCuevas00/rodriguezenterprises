@@ -131,9 +131,8 @@
   <div class="header-dock">
     
     <!-- Back Button -->
-    <a href="index.html" class="island-back-btn" title="Back to All Doors">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
-      <span>Home</span>
+    <a href="index.html" class="island-back-btn" title="Back to All Doors" aria-label="Back to Home">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
     </a>
 
     <span class="island-divider"></span>
@@ -141,7 +140,10 @@
     <!-- Brand Logo -->
     <a href="index.html" class="brand-logo" title="Rodriguez Enterprises">
       <img src="photos/logo.PNG" alt="Rodriguez Enterprises" class="brand-logo-img">
-      <span class="brand-title">RODRIGUEZ</span>
+      <div class="brand-logo-text">
+        <span class="brand-title">RODRIGUEZ</span>
+        <span class="brand-subtitle">ENTERPRISES</span>
+      </div>
     </a>
 
     <span class="island-divider"></span>
@@ -157,16 +159,16 @@
       </a>
     </nav>
 
-    <!-- Mobile Toggle Button -->
-    <button class="mobile-nav-toggle" id="mobile-nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-        <line x1="4" y1="7" x2="20" y2="7"></line>
-        <line x1="4" y1="12" x2="20" y2="12"></line>
-        <line x1="4" y1="17" x2="20" y2="17"></line>
-      </svg>
-    </button>
-
   </div>
+
+  <!-- Mobile Toggle Button -->
+  <button class="mobile-nav-toggle" id="mobile-nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="4" y1="7" x2="20" y2="7"></line>
+      <line x1="4" y1="12" x2="20" y2="12"></line>
+      <line x1="4" y1="17" x2="20" y2="17"></line>
+    </svg>
+  </button>
 </header>
 
 <!-- Mobile Drawer Backdrop -->
@@ -191,27 +193,20 @@
   </div>
 
   <div>
-    <div class="mobile-drawer-section-title">Our 4 Crafts &amp; Services</div>
     <div class="mobile-services-grid">
       <a href="poured-up-vibez.html" class="mobile-service-card vibez">
         <div class="service-card-icon">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 22h8M12 11v11M19 3l-7 8-7-8h14z"/></svg>
         </div>
-        <div class="service-card-info">
-          <span class="service-card-title">Poured Up Vibez</span>
-          <span class="service-card-desc">Private Bartending</span>
-        </div>
+        <span class="service-card-title">Poured Up Vibez</span>
         <svg class="service-card-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
       </a>
 
-      <a href="security.html" class="mobile-service-card security active">
+      <a href="security.html" class="mobile-service-card security">
         <div class="service-card-icon">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
         </div>
-        <div class="service-card-info">
-          <span class="service-card-title">Security</span>
-          <span class="service-card-desc">Events &amp; Properties</span>
-        </div>
+        <span class="service-card-title">Security</span>
         <svg class="service-card-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
       </a>
 
@@ -219,10 +214,7 @@
         <div class="service-card-icon">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
         </div>
-        <div class="service-card-info">
-          <span class="service-card-title">Appliance Repair</span>
-          <span class="service-card-desc">Fast Diagnostic &amp; Fix</span>
-        </div>
+        <span class="service-card-title">Appliance Repair</span>
         <svg class="service-card-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
       </a>
 
@@ -230,17 +222,13 @@
         <div class="service-card-icon">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
         </div>
-        <div class="service-card-info">
-          <span class="service-card-title">Maintenance</span>
-          <span class="service-card-desc">Apartments &amp; Buildings</span>
-        </div>
+        <span class="service-card-title">Maintenance</span>
         <svg class="service-card-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
       </a>
     </div>
   </div>
 
   <div>
-    <div class="mobile-drawer-section-title">Explore &amp; Connect</div>
     <div class="mobile-nav-links">
       <a href="about.html" class="mobile-nav-item">
         <span>About Us</span>
