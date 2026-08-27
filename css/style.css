@@ -840,6 +840,23 @@ section{ padding: 96px 0; }
   transition: color 0.2s ease;
 }
 .footer-grid a:hover{ color: var(--gold); }
+
+/* Footer Division Underlined Links */
+.footer-craft-link{
+  display: block;
+  font-size: 0.92rem;
+  padding: 5px 0;
+  text-decoration: underline;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+.footer-craft-link:hover{
+  opacity: 0.85;
+  transform: translateX(2px);
+}
+.footer-craft-link.vibez{ color: #f472b6 !important; }
+.footer-craft-link.security{ color: #f7e096 !important; }
+.footer-craft-link.repair{ color: #38bdf8 !important; }
+.footer-craft-link.maint{ color: #4ade80 !important; }
 .footer-bottom{
   border-top: 1px solid var(--line);
   padding-top: 24px;
