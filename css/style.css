@@ -15,10 +15,10 @@
   --gold:       #c9a24b;   /* master brand accent */
   --color-gold-glow: rgba(201, 162, 75, 0.35);
 
-  --plum:  #5c2a4d;  --plum-soft:  #7a3a68;  --plum-glow: rgba(196, 56, 122, 0.4);
-  --steel: #2f4a5c;  --steel-soft: #3f6377;  --steel-glow: rgba(43, 130, 201, 0.4);
-  --rust:  #c1682b;  --rust-soft:  #d98446;  --rust-glow: rgba(232, 93, 26, 0.4);
-  --sage:  #3e5c4a;  --sage-soft:  #557a63;  --sage-glow: rgba(40, 160, 104, 0.4);
+  --plum:   #5c2a4d;  --plum-soft:   #7a3a68;  --plum-glow: rgba(196, 56, 122, 0.4);
+  --gold-s: #8a6824;  --gold-soft:   #c9a24b;  --gold-glow: rgba(201, 162, 75, 0.4);
+  --cyan:   #0284c7;  --cyan-soft:   #38bdf8;  --cyan-glow: rgba(56, 189, 248, 0.4);
+  --sage:   #3e5c4a;  --sage-soft:   #557a63;  --sage-glow: rgba(40, 160, 104, 0.4);
 
   --accent: var(--gold);        /* overridden per-page below */
   --accent-soft: #d8bb76;
@@ -43,10 +43,10 @@
 }
 
 /* Per-service theme overrides — set on <body class="..."> */
-body.vibez  { --accent: var(--plum);  --accent-soft: var(--plum-soft); }
-body.security{ --accent: var(--steel); --accent-soft: var(--steel-soft); }
-body.repair { --accent: var(--rust);  --accent-soft: var(--rust-soft); }
-body.maint  { --accent: var(--sage);  --accent-soft: var(--sage-soft); }
+body.vibez   { --accent: var(--plum);   --accent-soft: var(--plum-soft); }
+body.security{ --accent: var(--gold-s); --accent-soft: var(--gold-soft); }
+body.repair  { --accent: var(--cyan);   --accent-soft: var(--cyan-soft); }
+body.maint   { --accent: var(--sage);   --accent-soft: var(--sage-soft); }
 
 /* ---------- Reset ---------- */
 *, *::before, *::after{ box-sizing: border-box; }
@@ -200,6 +200,7 @@ section{ padding: 96px 0; }
   width: auto;
   max-width: 140px;
   object-fit: contain;
+  border-radius: 10px;
   border: none;
   box-shadow: none;
   background: transparent;
@@ -218,6 +219,7 @@ section{ padding: 96px 0; }
   width: auto;
   max-width: 160px;
   object-fit: contain;
+  border-radius: 12px;
   border: none;
   box-shadow: none;
   background: transparent;
@@ -365,9 +367,9 @@ section{ padding: 96px 0; }
   color: #f7e096;
 }
 .island-craft-badge.repair{
-  background: rgba(232, 93, 26, 0.2);
-  border: 1px solid rgba(232, 93, 26, 0.4);
-  color: #fb923c;
+  background: rgba(56, 189, 248, 0.18);
+  border: 1px solid rgba(56, 189, 248, 0.45);
+  color: #38bdf8;
 }
 .island-craft-badge.maint{
   background: rgba(40, 160, 104, 0.2);
@@ -647,15 +649,15 @@ section{ padding: 96px 0; }
 }
 
 .mobile-service-card.repair{
-  border-color: rgba(232, 93, 26, 0.25);
+  border-color: rgba(56, 189, 248, 0.25);
 }
 .mobile-service-card.repair .service-card-icon{
-  color: #fb923c;
-  background: rgba(232, 93, 26, 0.18);
+  color: #38bdf8;
+  background: rgba(56, 189, 248, 0.18);
 }
 .mobile-service-card.repair:hover, .mobile-service-card.repair.active{
-  background: rgba(232, 93, 26, 0.16);
-  border-color: #fb923c;
+  background: rgba(56, 189, 248, 0.16);
+  border-color: #38bdf8;
 }
 
 .mobile-service-card.maint{
@@ -884,7 +886,7 @@ section{ padding: 96px 0; }
   background: linear-gradient(180deg, rgba(82, 64, 24, 0.5) 0%, rgba(28, 28, 30, 0.88) 100%);
 }
 .door.repair::after {
-  background: linear-gradient(180deg, rgba(193, 104, 43, 0.45) 0%, rgba(28, 28, 30, 0.88) 100%);
+  background: linear-gradient(180deg, rgba(14, 116, 144, 0.45) 0%, rgba(28, 28, 30, 0.88) 100%);
 }
 .door.maint::after {
   background: linear-gradient(180deg, rgba(62, 92, 74, 0.45) 0%, rgba(28, 28, 30, 0.88) 100%);
@@ -897,7 +899,7 @@ section{ padding: 96px 0; }
   background: linear-gradient(180deg, rgba(201, 162, 75, 0.32) 0%, rgba(28, 28, 30, 0.72) 100%);
 }
 .door.repair:hover::after {
-  background: linear-gradient(180deg, rgba(240, 146, 78, 0.3) 0%, rgba(28, 28, 30, 0.72) 100%);
+  background: linear-gradient(180deg, rgba(56, 189, 248, 0.28) 0%, rgba(28, 28, 30, 0.72) 100%);
 }
 .door.maint:hover::after {
   background: linear-gradient(180deg, rgba(98, 150, 117, 0.3) 0%, rgba(28, 28, 30, 0.72) 100%);
@@ -952,8 +954,8 @@ section{ padding: 96px 0; }
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.04em;
-  color: #ffedd5;
-  text-shadow: 0 0 15px rgba(251, 146, 60, 0.4);
+  color: #e0f2fe;
+  text-shadow: 0 0 15px rgba(56, 189, 248, 0.45);
 }
 
 .door.maint .door-name{
@@ -989,7 +991,7 @@ section{ padding: 96px 0; }
 
 .door.vibez .door-enter{ color: #f472b6; }
 .door.security .door-enter{ color: #f7e096; }
-.door.repair .door-enter{ color: #fb923c; }
+.door.repair .door-enter{ color: #38bdf8; }
 .door.maint .door-enter{ color: #4ade80; }
 
 .door:hover .door-enter{ opacity:1; transform:translateY(0); }
@@ -1265,10 +1267,10 @@ table.price-table{ width:100%; border-collapse: collapse; min-width: 640px; }
   transition: border-color 0.2s ease, transform 0.2s ease;
 }
 .route-card:hover{ transform: translateY(-3px); }
-.route-card.vibez:hover{ border-color: var(--plum); }
-.route-card.security:hover{ border-color: var(--steel); }
-.route-card.repair:hover{ border-color: var(--rust); }
-.route-card.maint:hover{ border-color: var(--sage); }
+.route-card.vibez:hover{ border-color: #f472b6; }
+.route-card.security:hover{ border-color: var(--gold); }
+.route-card.repair:hover{ border-color: #38bdf8; }
+.route-card.maint:hover{ border-color: #4ade80; }
 .route-card h3{ margin-bottom:8px; }
 .route-card p{ font-size:0.85rem; margin-bottom: 16px; }
 .route-card .go{ font-size:0.75rem; letter-spacing:0.08em; text-transform:uppercase; color: var(--gold); }
