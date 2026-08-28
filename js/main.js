@@ -4,10 +4,13 @@
 
 document.addEventListener('DOMContentLoaded', function () {
 
-  // ---- 1. Transparent-to-Solid Header on Scroll ----
+  // ---- 1. Transparent-to-Solid Header on Scroll & Menu Open ----
   var header = document.querySelector('.site-header');
+  var mobileDrawer = document.querySelector('.mobile-nav-drawer');
+
   function updateHeaderScroll() {
-    if (window.scrollY > 20) {
+    var isDrawerOpen = mobileDrawer && mobileDrawer.classList.contains('open');
+    if (window.scrollY > 20 || isDrawerOpen) {
       if (header) header.classList.add('scrolled');
     } else {
       if (header) header.classList.remove('scrolled');
@@ -18,7 +21,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // ---- 2. Mobile Nav Drawer & Backdrop Toggle ----
   var mobileToggle = document.querySelector('.mobile-nav-toggle');
-  var mobileDrawer = document.querySelector('.mobile-nav-drawer');
   var mobileBackdrop = document.querySelector('.mobile-drawer-backdrop');
   var mobileCloseBtn = document.querySelector('.mobile-drawer-close');
 
@@ -27,6 +29,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (mobileBackdrop) mobileBackdrop.classList.add('open');
     if (mobileToggle) mobileToggle.setAttribute('aria-expanded', 'true');
     document.body.style.overflow = 'hidden';
+    updateHeaderScroll();
   }
 
   function closeDrawer() {
@@ -34,6 +37,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (mobileBackdrop) mobileBackdrop.classList.remove('open');
     if (mobileToggle) mobileToggle.setAttribute('aria-expanded', 'false');
     document.body.style.overflow = '';
+    updateHeaderScroll();
   }
 
   if (mobileToggle) {
