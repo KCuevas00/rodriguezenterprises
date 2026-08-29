@@ -1,421 +1,490 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Security | Rodriguez Enterprises</title>
-<meta name="description" content="Certified security for private events, venues, and properties. In partnership with M.L. Security.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
-<style>
-  .security-spotlight-hero {
-    position: relative;
-    padding: 130px 0 80px;
-    background: radial-gradient(ellipse 70% 60% at 50% 0%, rgba(245, 218, 145, 0.22) 0%, rgba(201, 162, 75, 0.06) 50%, rgba(10, 10, 14, 1) 100%);
-    border-bottom: 1px solid rgba(201, 162, 75, 0.22);
-    overflow: hidden;
-  }
-  .security-spotlight-beam {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 650px;
-    height: 440px;
-    background: radial-gradient(ellipse at 50% 0%, rgba(255, 236, 179, 0.3) 0%, rgba(201, 162, 75, 0) 70%);
-    pointer-events: none;
-  }
-  .security-chandelier-glow {
-    position: absolute;
-    top: -50px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 280px;
-    height: 120px;
-    background: radial-gradient(circle, rgba(255, 240, 190, 0.5) 0%, rgba(201, 162, 75, 0) 80%);
-    filter: blur(20px);
-    pointer-events: none;
-  }
-  .security-metallic-title {
-    font-family: var(--font-security);
-    background: linear-gradient(135deg, #fff7db 0%, #d8b257 45%, #9b7222 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin: 0;
-    line-height: 1.1;
-  }
-  .security-hero-title-lockup {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1.6rem;
-    margin-bottom: 0.8rem;
-  }
-  .security-hero-logo {
-    height: 95px;
-    width: auto;
-    object-fit: contain;
-    border-radius: 12px;
-    filter: drop-shadow(0 8px 24px rgba(201, 162, 75, 0.45));
-    transition: transform 0.3s ease;
-    flex-shrink: 0;
-  }
-  .security-hero-logo:hover {
-    transform: scale(1.05);
-  }
-  @media (max-width: 680px) {
-    .security-hero-title-lockup {
-      flex-direction: column;
-      gap: 0.8rem;
-    }
-    .security-hero-logo {
-      height: 75px;
-    }
-  }
 
-  /* Specular Sheen Card Hover */
-  .security-sheen-card {
-    background: radial-gradient(circle at 50% 0%, rgba(35, 30, 22, 0.85) 0%, rgba(14, 14, 18, 0.96) 100%);
-    border: 1px solid rgba(201, 162, 75, 0.25);
-    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.55);
-    border-radius: 16px;
-    padding: 2.2rem 1.8rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    position: relative;
-    overflow: hidden;
-    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-  .security-sheen-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 50%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(201, 162, 75, 0.18), transparent);
-    transform: skewX(-25deg);
-    transition: left 0.75s ease;
-    pointer-events: none;
-  }
-  .security-sheen-card:hover::before {
-    left: 200%;
-  }
-  .security-sheen-card:hover {
-    transform: translateY(-5px);
-    border-color: rgba(201, 162, 75, 0.7);
-    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.75), 0 0 25px rgba(201, 162, 75, 0.2);
-  }
-  .security-card-badge {
-    display: inline-block;
-    padding: 4px 10px;
-    border-radius: 6px;
-    background: rgba(201, 162, 75, 0.12);
-    border: 1px solid rgba(201, 162, 75, 0.3);
-    color: var(--gold);
-    font-size: 0.72rem;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    margin-bottom: 12px;
-    width: fit-content;
-  }
-</style>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Security | Rodriguez Enterprises</title>
+  <meta name="description"
+    content="Certified security for private events, venues, and properties. In partnership with M.L. Security.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .security-spotlight-hero {
+      position: relative;
+      padding: 130px 0 80px;
+      background: radial-gradient(ellipse 70% 60% at 50% 0%, rgba(245, 218, 145, 0.22) 0%, rgba(201, 162, 75, 0.06) 50%, rgba(10, 10, 14, 1) 100%);
+      border-bottom: 1px solid rgba(201, 162, 75, 0.22);
+      overflow: hidden;
+    }
+
+    .security-spotlight-beam {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 650px;
+      height: 440px;
+      background: radial-gradient(ellipse at 50% 0%, rgba(255, 236, 179, 0.3) 0%, rgba(201, 162, 75, 0) 70%);
+      pointer-events: none;
+    }
+
+    .security-chandelier-glow {
+      position: absolute;
+      top: -50px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 280px;
+      height: 120px;
+      background: radial-gradient(circle, rgba(255, 240, 190, 0.5) 0%, rgba(201, 162, 75, 0) 80%);
+      filter: blur(20px);
+      pointer-events: none;
+    }
+
+    .security-metallic-title {
+      font-family: var(--font-security);
+      background: linear-gradient(135deg, #fff7db 0%, #d8b257 45%, #9b7222 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin: 0;
+      line-height: 1.1;
+    }
+
+    .security-hero-title-lockup {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.6rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .security-hero-logo {
+      height: 95px;
+      width: auto;
+      object-fit: contain;
+      border-radius: 12px;
+      filter: drop-shadow(0 8px 24px rgba(201, 162, 75, 0.45));
+      transition: transform 0.3s ease;
+      flex-shrink: 0;
+    }
+
+    .security-hero-logo:hover {
+      transform: scale(1.05);
+    }
+
+    @media (max-width: 680px) {
+      .security-hero-title-lockup {
+        flex-direction: column;
+        gap: 0.8rem;
+      }
+
+      .security-hero-logo {
+        height: 75px;
+      }
+    }
+
+    /* Specular Sheen Card Hover */
+    .security-sheen-card {
+      background: radial-gradient(circle at 50% 0%, rgba(35, 30, 22, 0.85) 0%, rgba(14, 14, 18, 0.96) 100%);
+      border: 1px solid rgba(201, 162, 75, 0.25);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.55);
+      border-radius: 16px;
+      padding: 2.2rem 1.8rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .security-sheen-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 50%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(201, 162, 75, 0.18), transparent);
+      transform: skewX(-25deg);
+      transition: left 0.75s ease;
+      pointer-events: none;
+    }
+
+    .security-sheen-card:hover::before {
+      left: 200%;
+    }
+
+    .security-sheen-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(201, 162, 75, 0.7);
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.75), 0 0 25px rgba(201, 162, 75, 0.2);
+    }
+
+    .security-card-badge {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 6px;
+      background: rgba(201, 162, 75, 0.12);
+      border: 1px solid rgba(201, 162, 75, 0.3);
+      color: var(--gold);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      width: fit-content;
+    }
+  </style>
 </head>
+
 <body class="security">
 
-<header class="site-header" id="main-header">
-  <div class="header-dock">
-    
-    <!-- Back Button -->
-    <a href="index.html" class="island-back-btn" title="Back to All Doors" aria-label="Back to Home">
-      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
-    </a>
+  <header class="site-header" id="main-header">
+    <div class="header-dock">
 
-    <span class="island-divider"></span>
-
-    <!-- Brand Logo -->
-    <a href="index.html" class="brand-logo" title="Rodriguez Enterprises">
-      <img src="photos/logo.PNG" alt="Rodriguez Enterprises" class="brand-logo-img">
-      <div class="brand-logo-text">
-        <span class="brand-title">RODRIGUEZ</span>
-        <span class="brand-subtitle">ENTERPRISES</span>
-      </div>
-    </a>
-
-    <span class="island-divider"></span>
-
-    <span class="island-craft-badge security">Security</span>
-
-    <!-- Nav Links -->
-    <nav class="nav-group">
-      <a href="#services" class="nav-link-item">Services</a>
-      <a href="#quote" class="btn-contact-nav">
-        <span>Get a Quote</span>
-        <svg class="arrow-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+      <!-- Back Button -->
+      <a href="index.html" class="island-back-btn" title="Back to All Doors" aria-label="Back to Home">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <polyline points="15 18 9 12 15 6" />
+        </svg>
       </a>
-    </nav>
 
-  </div>
+      <span class="island-divider"></span>
 
-  <!-- Mobile Toggle Button -->
-  <button class="mobile-nav-toggle" id="mobile-nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-      <line x1="4" y1="7" x2="20" y2="7"></line>
-      <line x1="4" y1="12" x2="20" y2="12"></line>
-      <line x1="4" y1="17" x2="20" y2="17"></line>
-    </svg>
-  </button>
-</header>
+      <!-- Brand Logo -->
+      <a href="index.html" class="brand-logo" title="Rodriguez Enterprises">
+        <img src="photos/logo.PNG" alt="Rodriguez Enterprises" class="brand-logo-img">
+        <div class="brand-logo-text">
+          <span class="brand-title">RODRIGUEZ</span>
+          <span class="brand-subtitle">ENTERPRISES</span>
+        </div>
+      </a>
 
-<!-- Mobile Drawer Backdrop -->
-<div class="mobile-drawer-backdrop" id="mobile-drawer-backdrop" aria-hidden="true"></div>
+      <span class="island-divider"></span>
 
-<!-- Mobile Navigation Drawer -->
-<div class="mobile-nav-drawer" id="mobile-nav-drawer" role="dialog" aria-modal="true" aria-label="Navigation Menu">
-  <div class="mobile-drawer-header">
-    <a href="index.html" class="brand-logo" title="Rodriguez Enterprises">
-      <img src="photos/logo.PNG" alt="Rodriguez Enterprises" class="brand-logo-img">
-      <div class="brand-logo-text">
-        <span class="brand-title">RODRIGUEZ</span>
-        <span class="brand-subtitle">ENTERPRISES</span>
-      </div>
-    </a>
-    <button class="mobile-drawer-close" id="mobile-drawer-close" aria-label="Close menu">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-        <line x1="18" y1="6" x2="6" y2="18"></line>
-        <line x1="6" y1="6" x2="18" y2="18"></line>
+      <span class="island-craft-badge security">Security</span>
+
+      <!-- Nav Links -->
+      <nav class="nav-group">
+        <a href="#services" class="nav-link-item">Services</a>
+        <a href="#quote" class="btn-contact-nav">
+          <span>Get a Quote</span>
+          <svg class="arrow-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2.5">
+            <polyline points="9 18 15 12 9 6" />
+          </svg>
+        </a>
+      </nav>
+
+    </div>
+
+    <!-- Mobile Toggle Button -->
+    <button class="mobile-nav-toggle" id="mobile-nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+        stroke-linecap="round" stroke-linejoin="round">
+        <line x1="4" y1="7" x2="20" y2="7"></line>
+        <line x1="4" y1="12" x2="20" y2="12"></line>
+        <line x1="4" y1="17" x2="20" y2="17"></line>
       </svg>
     </button>
-  </div>
+  </header>
 
-  <div>
-    <div class="mobile-services-grid">
-      <a href="poured-up-vibez.html" class="mobile-service-card vibez">
-        <div class="service-card-icon">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 22h8M12 11v11M19 3l-7 8-7-8h14z"/></svg>
+  <!-- Mobile Drawer Backdrop -->
+  <div class="mobile-drawer-backdrop" id="mobile-drawer-backdrop" aria-hidden="true"></div>
+
+  <!-- Mobile Navigation Drawer -->
+  <div class="mobile-nav-drawer" id="mobile-nav-drawer" role="dialog" aria-modal="true" aria-label="Navigation Menu">
+    <div class="mobile-drawer-header">
+      <a href="index.html" class="brand-logo" title="Rodriguez Enterprises">
+        <img src="photos/logo.PNG" alt="Rodriguez Enterprises" class="brand-logo-img">
+        <div class="brand-logo-text">
+          <span class="brand-title">RODRIGUEZ</span>
+          <span class="brand-subtitle">ENTERPRISES</span>
         </div>
-        <span class="service-card-title">Poured Up Vibez</span>
-        <svg class="service-card-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
       </a>
+      <button class="mobile-drawer-close" id="mobile-drawer-close" aria-label="Close menu">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
 
-      <a href="security.html" class="mobile-service-card security">
-        <div class="service-card-icon">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        </div>
-        <span class="service-card-title">Security</span>
-        <svg class="service-card-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+    <div>
+      <div class="mobile-services-grid">
+        <a href="poured-up-vibez.html" class="mobile-service-card vibez">
+          <div class="service-card-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M8 22h8M12 11v11M19 3l-7 8-7-8h14z" />
+            </svg>
+          </div>
+          <span class="service-card-title">Poured Up Vibez</span>
+          <svg class="service-card-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2.5">
+            <polyline points="9 18 15 12 9 6" />
+          </svg>
+        </a>
+
+        <a href="security.html" class="mobile-service-card security">
+          <div class="service-card-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+            </svg>
+          </div>
+          <span class="service-card-title">Security</span>
+          <svg class="service-card-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2.5">
+            <polyline points="9 18 15 12 9 6" />
+          </svg>
+        </a>
+
+        <a href="appliance-repair.html" class="mobile-service-card repair">
+          <div class="service-card-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path
+                d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
+            </svg>
+          </div>
+          <span class="service-card-title">Appliance Repair</span>
+          <svg class="service-card-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2.5">
+            <polyline points="9 18 15 12 9 6" />
+          </svg>
+        </a>
+
+        <a href="maintenance.html" class="mobile-service-card maint">
+          <div class="service-card-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+              <polyline points="9 22 9 12 15 12 15 22" />
+            </svg>
+          </div>
+          <span class="service-card-title">Maintenance</span>
+          <svg class="service-card-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2.5">
+            <polyline points="9 18 15 12 9 6" />
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <div>
+      <div class="mobile-nav-links">
+        <a href="about.html" class="mobile-nav-item">
+          <span>About Us</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <polyline points="9 18 15 12 9 6" />
+          </svg>
+        </a>
+        <a href="contact.html" class="mobile-nav-item btn-contact-drawer">
+          <span>Contact &amp; Quotes</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <polyline points="9 18 15 12 9 6" />
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="mobile-drawer-phone-card">
+      <span class="drawer-phone-label">Direct Call / Dispatch</span>
+      <a href="tel:+16304657063" class="drawer-phone-btn">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <path
+            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+        </svg>
+        <span>(630) 465-7063</span>
       </a>
+    </div>
 
-      <a href="appliance-repair.html" class="mobile-service-card repair">
-        <div class="service-card-icon">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
-        </div>
-        <span class="service-card-title">Appliance Repair</span>
-        <svg class="service-card-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
-      </a>
-
-      <a href="maintenance.html" class="mobile-service-card maint">
-        <div class="service-card-icon">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-        </div>
-        <span class="service-card-title">Maintenance</span>
-        <svg class="service-card-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+    <div class="mobile-drawer-footer">
+      <a href="mailto:hello@rodriguezenterprises.com" class="drawer-contact-action">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+          <polyline points="22,6 12,13 2,6" />
+        </svg>
+        <span>hello@rodriguezenterprises.com</span>
       </a>
     </div>
   </div>
 
-  <div>
-    <div class="mobile-nav-links">
-      <a href="about.html" class="mobile-nav-item">
-        <span>About Us</span>
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
-      </a>
-      <a href="contact.html" class="mobile-nav-item btn-contact-drawer">
-        <span>Contact &amp; Quotes</span>
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
-      </a>
+  <!-- ============ HERO: CLEAN & SIMPLE WITH FLASHY LOGO ============ -->
+  <section class="security-spotlight-hero">
+    <div class="security-chandelier-glow"></div>
+    <div class="security-spotlight-beam"></div>
+    <div class="container" style="max-width: 860px; text-align: center; position: relative; z-index: 2;">
+
+      <!-- Hero Title Lockup (Logo to the left of Rodriguez Security) -->
+      <div class="security-hero-title-lockup">
+        <img src="photos/logo.PNG" alt="Rodriguez Enterprises" class="security-hero-logo">
+        <h1 class="security-metallic-title" style="font-size: clamp(2.4rem, 5.5vw, 4rem);">
+          Rodriguez Security
+        </h1>
+      </div>
+
+      <p class="lede" style="font-size: 1.15rem; color: #d6d3cd; max-width: 580px; margin: 1rem auto 2.2rem;">
+        Certified, trained security for private events, venues, and properties. Provided in partnership with M.L.
+        Security.
+      </p>
+      <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+        <a href="#quote" class="btn btn-primary">Get a Quote <span class="btn-arrow">↓</span></a>
+        <a href="tel:+16304657063" class="btn btn-outline"
+          style="border-color: rgba(201, 162, 75, 0.4); color: #fff;">Call Direct</a>
+      </div>
     </div>
-  </div>
+  </section>
 
-  <div class="mobile-drawer-phone-card">
-    <span class="drawer-phone-label">Direct Call / Dispatch</span>
-    <a href="tel:+16304657063" class="drawer-phone-btn">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-      <span>(630) 465-7063</span>
-    </a>
-  </div>
+  <!-- ============ 3 SIMPLE PACKAGES / CARDS ============ -->
+  <section id="services" style="padding: 70px 0;">
+    <div class="container">
+      <div class="grid-3" style="gap: 1.8rem;">
 
-  <div class="mobile-drawer-footer">
-    <a href="mailto:hello@rodriguezenterprises.com" class="drawer-contact-action">
-      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-      <span>hello@rodriguezenterprises.com</span>
-    </a>
-  </div>
-</div>
+        <!-- CARD 1: PRIVATE EVENTS -->
+        <div class="security-sheen-card">
+          <div>
+            <span class="security-card-badge">Events</span>
+            <h3 style="font-size: 1.3rem; color: #ffffff; margin: 0 0 8px;">Private Events</h3>
+            <p style="margin: 0; font-size: 0.9rem; color: var(--paper-dim); line-height: 1.6;">
+              Weddings, private parties, and birthdays. Entry access control, guest safety, and discreet incident
+              prevention.
+            </p>
+          </div>
+          <a href="#quote" class="btn btn-outline"
+            style="border-color: rgba(201, 162, 75, 0.4); width: 100%; text-align: center; margin-top: 1.6rem;">
+            Book Event Security
+          </a>
+        </div>
 
-<!-- ============ HERO: CLEAN & SIMPLE WITH FLASHY LOGO ============ -->
-<section class="security-spotlight-hero">
-  <div class="security-chandelier-glow"></div>
-  <div class="security-spotlight-beam"></div>
-  <div class="container" style="max-width: 860px; text-align: center; position: relative; z-index: 2;">
-    
-    <!-- Hero Title Lockup (Logo to the left of Rodriguez Security) -->
-    <div class="security-hero-title-lockup">
-      <img src="photos/logo.PNG" alt="Rodriguez Enterprises" class="security-hero-logo">
-      <h1 class="security-metallic-title" style="font-size: clamp(2.4rem, 5.5vw, 4rem);">
-        Rodriguez Security
-      </h1>
+        <!-- CARD 2: VENUES & BUSINESSES -->
+        <div class="security-sheen-card">
+          <div>
+            <span class="security-card-badge">Commercial</span>
+            <h3 style="font-size: 1.3rem; color: #ffffff; margin: 0 0 8px;">Venues &amp; Businesses</h3>
+            <p style="margin: 0; font-size: 0.9rem; color: var(--paper-dim); line-height: 1.6;">
+              Door staff, crowd control, and asset protection for bars, clubs, lounges, and corporate functions.
+            </p>
+          </div>
+          <a href="#quote" class="btn btn-primary" style="width: 100%; text-align: center; margin-top: 1.6rem;">
+            Book Venue Security
+          </a>
+        </div>
+
+        <!-- CARD 3: PROPERTY PATROL -->
+        <div class="security-sheen-card">
+          <div>
+            <span class="security-card-badge">Properties</span>
+            <h3 style="font-size: 1.3rem; color: #ffffff; margin: 0 0 8px;">Property Patrol</h3>
+            <p style="margin: 0; font-size: 0.9rem; color: var(--paper-dim); line-height: 1.6;">
+              Overnight watch, scheduled patrols, and parking lot monitoring for apartment buildings and properties.
+            </p>
+          </div>
+          <a href="#quote" class="btn btn-outline"
+            style="border-color: rgba(201, 162, 75, 0.4); width: 100%; text-align: center; margin-top: 1.6rem;">
+            Book Property Patrol
+          </a>
+        </div>
+
+      </div>
     </div>
+  </section>
 
-    <p class="lede" style="font-size: 1.15rem; color: #d6d3cd; max-width: 580px; margin: 1rem auto 2.2rem;">
-      Certified, trained security for private events, venues, and properties. Provided in partnership with M.L. Security.
-    </p>
-    <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-      <a href="#quote" class="btn btn-primary">Get a Quote <span class="btn-arrow">↓</span></a>
-      <a href="tel:+16304657063" class="btn btn-outline" style="border-color: rgba(201, 162, 75, 0.4); color: #fff;">Call Direct</a>
+  <!-- ============ SIMPLE QUOTE FORM ============ -->
+  <section id="quote"
+    style="border-top: 1px solid rgba(201, 162, 75, 0.2); background: var(--ink-soft); padding: 70px 0;">
+    <div class="container">
+      <div class="section-head center">
+        <div class="eyebrow" style="color: var(--gold); justify-content: center;">Get a Quote</div>
+        <h2>Tell us about your event or property</h2>
+      </div>
+
+      <div class="form-panel" style="max-width: 680px; margin: 0 auto; border: 1px solid rgba(201, 162, 75, 0.25);">
+        <form data-form>
+          <div class="form-row">
+            <div class="field">
+              <label for="name">Full name</label>
+              <input type="text" id="name" placeholder="Your name" required>
+            </div>
+            <div class="field">
+              <label for="email">Email</label>
+              <input type="email" id="email" placeholder="name@example.com" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="field">
+              <label for="type">Security needed</label>
+              <select id="type">
+                <option>Private Event</option>
+                <option>Venue / Business Security</option>
+                <option>Property Patrol</option>
+                <option>Other / Not Sure</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="date">Date needed</label>
+              <input type="date" id="date">
+            </div>
+          </div>
+          <div class="field">
+            <label for="details">Details</label>
+            <textarea id="details" placeholder="Location, estimated guest count, hours needed..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width: 100%; padding: 14px; font-size: 1rem;">
+            Request Quote →
+          </button>
+        </form>
+        <div class="form-success">Thanks — we'll follow up shortly to confirm details and pricing.</div>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ============ 3 SIMPLE PACKAGES / CARDS ============ -->
-<section id="services" style="padding: 70px 0;">
-  <div class="container">
-    <div class="grid-3" style="gap: 1.8rem;">
-      
-      <!-- CARD 1: PRIVATE EVENTS -->
-      <div class="security-sheen-card">
+  <!-- ============ SITE FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
         <div>
-          <span class="security-card-badge">Events</span>
-          <h3 style="font-size: 1.3rem; color: #ffffff; margin: 0 0 8px;">Private Events</h3>
-          <p style="margin: 0; font-size: 0.9rem; color: var(--paper-dim); line-height: 1.6;">
-            Weddings, private parties, and birthdays. Entry access control, guest safety, and discreet incident prevention.
-          </p>
+          <a href="index.html" class="footer-brand-lockup" title="Rodriguez Enterprises">
+            <img src="photos/logo.PNG" alt="Rodriguez Enterprises" class="brand-logo-img footer-logo-img">
+            <div class="brand-logo-text">
+              <span class="brand-title">RODRIGUEZ</span>
+              <span class="brand-subtitle">ENTERPRISES</span>
+            </div>
+          </a>
+          <p style="max-width:280px; font-size: 0.88rem; color: var(--paper-dim);">One company, four crafts — private
+            bartending, security, appliance repair, and property maintenance.</p>
         </div>
-        <a href="#quote" class="btn btn-outline" style="border-color: rgba(201, 162, 75, 0.4); width: 100%; text-align: center; margin-top: 1.6rem;">
-          Book Event Security
-        </a>
-      </div>
-
-      <!-- CARD 2: VENUES & BUSINESSES -->
-      <div class="security-sheen-card">
         <div>
-          <span class="security-card-badge">Commercial</span>
-          <h3 style="font-size: 1.3rem; color: #ffffff; margin: 0 0 8px;">Venues &amp; Businesses</h3>
-          <p style="margin: 0; font-size: 0.9rem; color: var(--paper-dim); line-height: 1.6;">
-            Door staff, crowd control, and asset protection for bars, clubs, lounges, and corporate functions.
-          </p>
+          <h4>Explore Division Pages</h4>
+          <a href="poured-up-vibez.html" class="footer-craft-link vibez">Poured Up Vibez</a>
+          <a href="security.html" class="footer-craft-link security">Security Division</a>
+          <a href="appliance-repair.html" class="footer-craft-link repair">Appliance Repair</a>
+          <a href="maintenance.html" class="footer-craft-link maint">Property Maintenance</a>
         </div>
-        <a href="#quote" class="btn btn-primary" style="width: 100%; text-align: center; margin-top: 1.6rem;">
-          Book Venue Security
-        </a>
-      </div>
-
-      <!-- CARD 3: PROPERTY PATROL -->
-      <div class="security-sheen-card">
         <div>
-          <span class="security-card-badge">Properties</span>
-          <h3 style="font-size: 1.3rem; color: #ffffff; margin: 0 0 8px;">Property Patrol</h3>
-          <p style="margin: 0; font-size: 0.9rem; color: var(--paper-dim); line-height: 1.6;">
-            Overnight watch, scheduled patrols, and parking lot monitoring for apartment buildings and properties.
-          </p>
+          <h4>Direct Contact</h4>
+          <a href="about.html">About</a>
+          <a href="contact.html">Send a Message</a>
+          <a href="tel:+16304657063">(630) 465-7063</a>
+          <a href="mailto:hello@rodriguezenterprises.com">hello@rodriguezenterprises.com</a>
         </div>
-        <a href="#quote" class="btn btn-outline" style="border-color: rgba(201, 162, 75, 0.4); width: 100%; text-align: center; margin-top: 1.6rem;">
-          Book Property Patrol
-        </a>
       </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ============ SIMPLE QUOTE FORM ============ -->
-<section id="quote" style="border-top: 1px solid rgba(201, 162, 75, 0.2); background: var(--ink-soft); padding: 70px 0;">
-  <div class="container">
-    <div class="section-head center">
-      <div class="eyebrow" style="color: var(--gold); justify-content: center;">Get a Quote</div>
-      <h2>Tell us about your event or property</h2>
-    </div>
-
-    <div class="form-panel" style="max-width: 680px; margin: 0 auto; border: 1px solid rgba(201, 162, 75, 0.25);">
-      <form data-form>
-        <div class="form-row">
-          <div class="field">
-            <label for="name">Full name</label>
-            <input type="text" id="name" placeholder="Your name" required>
-          </div>
-          <div class="field">
-            <label for="email">Email</label>
-            <input type="email" id="email" placeholder="name@example.com" required>
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="field">
-            <label for="type">Security needed</label>
-            <select id="type">
-              <option>Private Event</option>
-              <option>Venue / Business Security</option>
-              <option>Property Patrol</option>
-              <option>Other / Not Sure</option>
-            </select>
-          </div>
-          <div class="field">
-            <label for="date">Date needed</label>
-            <input type="date" id="date">
-          </div>
-        </div>
-        <div class="field">
-          <label for="details">Details</label>
-          <textarea id="details" placeholder="Location, estimated guest count, hours needed..."></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary" style="width: 100%; padding: 14px; font-size: 1rem;">
-          Request Quote →
-        </button>
-      </form>
-      <div class="form-success">Thanks — we'll follow up shortly to confirm details and pricing.</div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ SITE FOOTER ============ -->
-<footer class="site-footer">
-  <div class="container">
-    <div class="footer-grid">
-      <div>
-        <a href="index.html" class="footer-brand-lockup" title="Rodriguez Enterprises">
-          <img src="photos/logo.PNG" alt="Rodriguez Enterprises" class="brand-logo-img footer-logo-img">
-          <div class="brand-logo-text">
-            <span class="brand-title">RODRIGUEZ</span>
-            <span class="brand-subtitle">ENTERPRISES</span>
-          </div>
-        </a>
-        <p style="max-width:280px; font-size: 0.88rem; color: var(--paper-dim);">One company, four crafts — private bartending, security, appliance repair, and property maintenance.</p>
-      </div>
-      <div>
-        <h4>Explore Division Pages</h4>
-        <a href="poured-up-vibez.html" class="footer-craft-link vibez">Poured Up Vibez</a>
-        <a href="security.html" class="footer-craft-link security">Security Division</a>
-        <a href="appliance-repair.html" class="footer-craft-link repair">Appliance Repair</a>
-        <a href="maintenance.html" class="footer-craft-link maint">Property Maintenance</a>
-      </div>
-      <div>
-        <h4>Direct Contact</h4>
-        <a href="about.html">About</a>
-        <a href="contact.html">Send a Message</a>
-        <a href="tel:+16304657063">(630) 465-7063</a>
-        <a href="mailto:hello@rodriguezenterprises.com">hello@rodriguezenterprises.com</a>
+      <div class="footer-bottom">
+        <span>© 2026 Rodriguez Enterprises. All rights reserved.</span>
+        <span>Licensed &amp; Insured Multi-Craft Services</span>
       </div>
     </div>
-    <div class="footer-bottom">
-      <span>© 2026 Rodriguez Enterprises. All rights reserved.</span>
-      <span>Licensed &amp; Insured Multi-Craft Services</span>
-    </div>
-  </div>
-</footer>
+  </footer>
 
-<script src="js/main.js"></script>
+  <script src="js/main.js"></script>
 </body>
+
 </html>
