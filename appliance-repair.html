@@ -117,7 +117,7 @@
   }
 </style>
 </head>
-<body class="repair">
+<body class="repair" id="top">
 
 <header class="site-header" id="main-header">
   <div class="header-dock">
@@ -140,11 +140,13 @@
 
     <span class="island-divider"></span>
 
-    <span class="island-craft-badge repair">Appliance Repair</span>
+    <!-- Appliance Repair Badge: Click to scroll to top -->
+    <a href="#top" class="island-craft-badge repair" title="Back to top of page">Appliance Repair</a>
 
     <!-- Nav Links -->
     <nav class="nav-group">
       <a href="#services" class="nav-link-item">Services</a>
+      <a href="#gallery" class="nav-link-item">Gallery</a>
       <a href="#request" class="btn-contact-nav">
         <span>Book Repair</span>
         <svg class="arrow-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
@@ -202,7 +204,7 @@
         <svg class="service-card-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
       </a>
 
-      <a href="appliance-repair.html" class="mobile-service-card repair">
+      <a href="#top" class="mobile-service-card repair">
         <div class="service-card-icon">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
         </div>
@@ -222,6 +224,14 @@
 
   <div>
     <div class="mobile-nav-links">
+      <a href="#services" class="mobile-nav-item">
+        <span>Services</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+      </a>
+      <a href="#gallery" class="mobile-nav-item">
+        <span>Recent Repairs Gallery</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+      </a>
       <a href="about.html" class="mobile-nav-item">
         <span>About Us</span>
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
@@ -249,8 +259,12 @@
   </div>
 </div>
 
-<!-- ============ HERO: CLEAN & SIMPLE ============ -->
+<!-- ============ HERO: CLEAN & SIMPLE WITH VIDEO BACKGROUND ============ -->
 <section class="repair-spotlight-hero">
+  <video class="hero-bg-video" autoplay muted loop playsinline poster="videos/posters/repair-hero-condenser-motor-cooling-poster.jpg" preload="metadata">
+    <source src="videos/repair-hero-condenser-motor-cooling.mp4" type="video/mp4">
+  </video>
+  <div class="repair-spotlight-overlay"></div>
   <div class="repair-spotlight-beam"></div>
   <div class="container" style="max-width: 860px; text-align: center; position: relative; z-index: 2;">
     
@@ -278,25 +292,25 @@
     <div class="grid-3" style="gap: 1.8rem;">
       
       <!-- CARD 1: LAUNDRY -->
-      <div class="repair-sheen-card">
+      <div class="repair-sheen-card" style="background-image: linear-gradient(180deg, rgba(8, 14, 22, 0.76) 0%, rgba(8, 12, 18, 0.92) 100%), url('photos/repair-washing-machine-drum-teardown.jpg');">
         <div>
           <span class="repair-card-badge">Laundry</span>
-          <h3 style="font-size: 1.3rem; color: #ffffff; margin: 0 0 8px;">Washers &amp; Dryers</h3>
-          <p style="margin: 0; font-size: 0.9rem; color: var(--paper-dim); line-height: 1.6;">
+          <h3 style="font-size: 1.35rem; color: #ffffff; margin: 0 0 8px;">Washers &amp; Dryers</h3>
+          <p style="margin: 0; font-size: 0.92rem; color: #e2e8f0; line-height: 1.6;">
             Spin issues, heating failures, drainage clogs, leaks, and belt replacements across all major brands.
           </p>
         </div>
-        <a href="#request" class="btn btn-outline" style="border-color: rgba(56, 189, 248, 0.4); width: 100%; text-align: center; margin-top: 1.6rem;">
+        <a href="#request" class="btn btn-outline" style="border-color: rgba(56, 189, 248, 0.5); width: 100%; text-align: center; margin-top: 1.6rem; color: #fff;">
           Book Laundry Repair
         </a>
       </div>
 
       <!-- CARD 2: REFRIGERATION -->
-      <div class="repair-sheen-card">
+      <div class="repair-sheen-card" style="background-image: linear-gradient(180deg, rgba(8, 14, 22, 0.76) 0%, rgba(8, 12, 18, 0.92) 100%), url('videos/posters/repair-hero-condenser-motor-cooling-poster.jpg');">
         <div>
           <span class="repair-card-badge">Cooling</span>
-          <h3 style="font-size: 1.3rem; color: #ffffff; margin: 0 0 8px;">Refrigerators &amp; Freezers</h3>
-          <p style="margin: 0; font-size: 0.9rem; color: var(--paper-dim); line-height: 1.6;">
+          <h3 style="font-size: 1.35rem; color: #ffffff; margin: 0 0 8px;">Refrigerators &amp; Freezers</h3>
+          <p style="margin: 0; font-size: 0.92rem; color: #e2e8f0; line-height: 1.6;">
             Cooling problems, compressor diagnostics, ice maker fixes, frost buildup, and door seal repairs.
           </p>
         </div>
@@ -305,18 +319,129 @@
         </a>
       </div>
 
-      <!-- CARD 3: COOKING -->
-      <div class="repair-sheen-card">
+      <!-- CARD 3: COOKING APPLIANCES -->
+      <div class="repair-sheen-card" style="background-image: linear-gradient(180deg, rgba(8, 14, 22, 0.76) 0%, rgba(8, 12, 18, 0.92) 100%), url('photos/repair-stove-oven-service.jpg');">
         <div>
           <span class="repair-card-badge">Cooking</span>
-          <h3 style="font-size: 1.3rem; color: #ffffff; margin: 0 0 8px;">Stoves &amp; Ovens</h3>
-          <p style="margin: 0; font-size: 0.9rem; color: var(--paper-dim); line-height: 1.6;">
-            Burner ignition repairs, uneven heating elements, temperature control boards, and gas/electric ranges.
+          <h3 style="font-size: 1.35rem; color: #ffffff; margin: 0 0 8px;">Stoves &amp; Ovens</h3>
+          <p style="margin: 0; font-size: 0.92rem; color: #e2e8f0; line-height: 1.6;">
+            Burner ignition faults, temperature calibration, bake element burnout, and control panel issues.
           </p>
         </div>
-        <a href="#request" class="btn btn-outline" style="border-color: rgba(56, 189, 248, 0.4); width: 100%; text-align: center; margin-top: 1.6rem;">
+        <a href="#request" class="btn btn-outline" style="border-color: rgba(56, 189, 248, 0.5); width: 100%; text-align: center; margin-top: 1.6rem; color: #fff;">
           Book Cooking Repair
         </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ REAL FIELD REPAIRS & DIAGNOSTICS GALLERY ============ -->
+<section class="field-gallery-section" id="gallery">
+  <div class="container">
+    
+    <div class="section-head center" style="margin-bottom: 2.5rem;">
+      <div class="eyebrow" style="color: #38bdf8; justify-content: center;">Field Work &amp; Repairs</div>
+      <h2>Recent Jobs &amp; Repairs</h2>
+      <p style="max-width: 620px; margin: 0 auto; color: var(--paper-dim); font-size: 0.95rem;">
+        Real photos and video clips from recent service calls. Tap any item to take a closer look.
+      </p>
+    </div>
+
+    <div class="field-gallery-grid" id="repair-gallery-grid">
+      
+      <!-- Card 1: Commercial Cooler Video Clip -->
+      <div class="field-card" data-media-type="video" data-media-src="videos/repair-commercial-cooler-power-startup.mp4" data-title="Commercial Cooler Test" data-desc="Checking the power and controls on a walk-in cooler." tabindex="0" role="button" aria-label="Play Commercial Cooler Test">
+        <div class="field-card-media">
+          <img src="videos/posters/repair-commercial-cooler-power-startup-poster.jpg" alt="Commercial Cooler Test" loading="lazy">
+        </div>
+        <div class="field-card-caption">
+          <h4 class="field-card-title">Commercial Cooler Test</h4>
+          <p class="field-card-desc">Checking power &amp; controls on a cooler.</p>
+        </div>
+        <div class="field-play-overlay" aria-hidden="true">
+          <div class="field-play-btn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2: Washing Machine Teardown Photo -->
+      <div class="field-card" data-media-type="image" data-media-src="photos/repair-washing-machine-drum-teardown.jpg" data-title="Washer Teardown" data-desc="Taking apart a washer to replace the drum and pump." tabindex="0" role="button" aria-label="View Washer Teardown">
+        <div class="field-card-media">
+          <img src="photos/repair-washing-machine-drum-teardown.jpg" alt="Washer Teardown" loading="lazy">
+        </div>
+        <div class="field-card-caption">
+          <h4 class="field-card-title">Washer Teardown</h4>
+          <p class="field-card-desc">Taking apart a washer to fix the drum.</p>
+        </div>
+      </div>
+
+      <!-- Card 3: Motor Stator Rebuild Photo -->
+      <div class="field-card" data-media-type="image" data-media-src="photos/repair-motor-stator-rebuild.jpg" data-title="Motor Rebuild" data-desc="Checking and rewiring a bad motor." tabindex="0" role="button" aria-label="View Motor Rebuild">
+        <div class="field-card-media">
+          <img src="photos/repair-motor-stator-rebuild.jpg" alt="Motor Rebuild" loading="lazy">
+        </div>
+        <div class="field-card-caption">
+          <h4 class="field-card-title">Motor Rebuild</h4>
+          <p class="field-card-desc">Checking and rewiring a bad motor.</p>
+        </div>
+      </div>
+
+      <!-- Card 4: New Condenser Fan Assembly Photo -->
+      <div class="field-card" data-media-type="image" data-media-src="photos/repair-condenser-fan-motor-assembly.jpg" data-title="New Fan Motor" data-desc="Brand new cooling fan installed." tabindex="0" role="button" aria-label="View New Fan Motor">
+        <div class="field-card-media">
+          <img src="photos/repair-condenser-fan-motor-assembly.jpg" alt="New Fan Motor" loading="lazy">
+        </div>
+        <div class="field-card-caption">
+          <h4 class="field-card-title">New Fan Motor</h4>
+          <p class="field-card-desc">Brand new cooling fan installed.</p>
+        </div>
+      </div>
+
+      <!-- Card 5: High-Pressure Spray Leak Photo -->
+      <div class="field-card" data-media-type="image" data-media-src="photos/repair-spray-leak-brass-fitting.jpg" data-title="Fixing Water Leak" data-desc="Locating and fixing an active pipe spray leak." tabindex="0" role="button" aria-label="View Fixing Water Leak">
+        <div class="field-card-media">
+          <img src="photos/repair-spray-leak-brass-fitting.jpg" alt="Fixing Water Leak" loading="lazy">
+        </div>
+        <div class="field-card-caption">
+          <h4 class="field-card-title">Fixing Water Leak</h4>
+          <p class="field-card-desc">Found and fixed a high-pressure leak.</p>
+        </div>
+      </div>
+
+      <!-- Card 6: Stainless Braided Supply Lines Photo -->
+      <div class="field-card" data-media-type="image" data-media-src="photos/repair-stainless-braided-supply-lines.jpg" data-title="New Water Lines" data-desc="Swapping old pipes for fresh braided stainless lines." tabindex="0" role="button" aria-label="View New Water Lines">
+        <div class="field-card-media">
+          <img src="photos/repair-stainless-braided-supply-lines.jpg" alt="New Water Lines" loading="lazy">
+        </div>
+        <div class="field-card-caption">
+          <h4 class="field-card-title">New Water Lines</h4>
+          <p class="field-card-desc">Upgraded with heavy-duty braided lines.</p>
+        </div>
+      </div>
+
+      <!-- Card 7: Corroded Refrigeration Lines Photo -->
+      <div class="field-card" data-media-type="image" data-media-src="photos/repair-corroded-refrigeration-lines.jpg" data-title="Replacing Old Pipes" data-desc="Pulling out old corroded lines to fix cooling issues." tabindex="0" role="button" aria-label="View Replacing Old Pipes">
+        <div class="field-card-media">
+          <img src="photos/repair-corroded-refrigeration-lines.jpg" alt="Replacing Old Pipes" loading="lazy">
+        </div>
+        <div class="field-card-caption">
+          <h4 class="field-card-title">Replacing Old Pipes</h4>
+          <p class="field-card-desc">Pulling out rusty lines so it cools right.</p>
+        </div>
+      </div>
+
+      <!-- Card 8: Commercial Faucet Hookup Photo -->
+      <div class="field-card" data-media-type="image" data-media-src="photos/repair-commercial-sink-faucet-hookup.jpg" data-title="Commercial Sink Hookup" data-desc="Connecting fresh water feeds to a commercial sink." tabindex="0" role="button" aria-label="View Commercial Sink Hookup">
+        <div class="field-card-media">
+          <img src="photos/repair-commercial-sink-faucet-hookup.jpg" alt="Commercial Sink Hookup" loading="lazy">
+        </div>
+        <div class="field-card-caption">
+          <h4 class="field-card-title">Commercial Sink Hookup</h4>
+          <p class="field-card-desc">Connected water lines to a big sink.</p>
+        </div>
       </div>
 
     </div>
@@ -407,6 +532,29 @@
     </div>
   </div>
 </footer>
+
+<!-- Universal Lightbox Modal -->
+<div class="universal-media-modal" id="universal-modal" role="dialog" aria-modal="true" aria-label="Media Preview">
+  <div class="universal-media-dialog">
+    <button class="universal-modal-close" id="universal-modal-close" aria-label="Close dialog">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <button class="universal-modal-nav-prev" id="universal-modal-prev" aria-label="Previous item">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+    </button>
+    <button class="universal-modal-nav-next" id="universal-modal-next" aria-label="Next item">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+    </button>
+    <div class="universal-modal-media-wrap">
+      <img class="universal-modal-img" id="universal-modal-img" alt="">
+      <video class="universal-modal-video" id="universal-modal-video" controls playsinline></video>
+    </div>
+    <div class="universal-modal-footer">
+      <h4 class="universal-modal-title" id="universal-modal-title"></h4>
+      <p class="universal-modal-desc" id="universal-modal-desc"></p>
+    </div>
+  </div>
+</div>
 
 <script src="js/main.js"></script>
 </body>

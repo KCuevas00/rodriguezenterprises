@@ -117,7 +117,7 @@
   }
 </style>
 </head>
-<body class="maint">
+<body class="maint" id="top">
 
 <header class="site-header" id="main-header">
   <div class="header-dock">
@@ -140,11 +140,13 @@
 
     <span class="island-divider"></span>
 
-    <span class="island-craft-badge maint">Maintenance</span>
+    <!-- Property Maintenance Badge: Click to scroll to top -->
+    <a href="#top" class="island-craft-badge maint" title="Back to top of page">Property Maintenance</a>
 
     <!-- Nav Links -->
     <nav class="nav-group">
       <a href="#services" class="nav-link-item">Services</a>
+      <a href="#gallery" class="nav-link-item">Gallery</a>
       <a href="#contact" class="btn-contact-nav">
         <span>Request Scope</span>
         <svg class="arrow-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
@@ -210,7 +212,7 @@
         <svg class="service-card-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
       </a>
 
-      <a href="maintenance.html" class="mobile-service-card maint">
+      <a href="#top" class="mobile-service-card maint">
         <div class="service-card-icon">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
         </div>
@@ -222,6 +224,14 @@
 
   <div>
     <div class="mobile-nav-links">
+      <a href="#services" class="mobile-nav-item">
+        <span>Services</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+      </a>
+      <a href="#gallery" class="mobile-nav-item">
+        <span>Field Projects Gallery</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+      </a>
       <a href="about.html" class="mobile-nav-item">
         <span>About Us</span>
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
@@ -249,8 +259,12 @@
   </div>
 </div>
 
-<!-- ============ HERO: CLEAN & SIMPLE ============ -->
+<!-- ============ HERO: CLEAN & SIMPLE WITH VIDEO BACKGROUND ============ -->
 <section class="maint-spotlight-hero">
+  <video class="hero-bg-video" autoplay muted loop playsinline poster="videos/posters/maint-hero-navy-room-turnover-poster.jpg" preload="metadata">
+    <source src="videos/maint-hero-navy-room-turnover.mp4" type="video/mp4">
+  </video>
+  <div class="maint-spotlight-overlay"></div>
   <div class="maint-spotlight-beam"></div>
   <div class="container" style="max-width: 860px; text-align: center; position: relative; z-index: 2;">
     
@@ -278,25 +292,25 @@
     <div class="grid-3" style="gap: 1.8rem;">
       
       <!-- CARD 1: UNIT TURNOVERS -->
-      <div class="maint-sheen-card">
+      <div class="maint-sheen-card" style="background-image: linear-gradient(180deg, rgba(8, 22, 14, 0.76) 0%, rgba(8, 16, 12, 0.92) 100%), url('videos/posters/maint-hero-navy-room-turnover-poster.jpg');">
         <div>
           <span class="maint-card-badge">Turnovers</span>
-          <h3 style="font-size: 1.3rem; color: #ffffff; margin: 0 0 8px;">Unit Turnovers</h3>
-          <p style="margin: 0; font-size: 0.9rem; color: var(--paper-dim); line-height: 1.6;">
+          <h3 style="font-size: 1.35rem; color: #ffffff; margin: 0 0 8px;">Unit Turnovers</h3>
+          <p style="margin: 0; font-size: 0.92rem; color: #e2e8f0; line-height: 1.6;">
             Fast make-ready repairs, touch-ups, fixture replacements, and punch-list work between tenant move-ins.
           </p>
         </div>
-        <a href="#contact" class="btn btn-outline" style="border-color: rgba(74, 222, 128, 0.4); width: 100%; text-align: center; margin-top: 1.6rem;">
+        <a href="#contact" class="btn btn-outline" style="border-color: rgba(74, 222, 128, 0.5); width: 100%; text-align: center; margin-top: 1.6rem; color: #fff;">
           Request Turnover Service
         </a>
       </div>
 
       <!-- CARD 2: COMMON AREAS -->
-      <div class="maint-sheen-card">
+      <div class="maint-sheen-card" style="background-image: linear-gradient(180deg, rgba(8, 22, 14, 0.76) 0%, rgba(8, 16, 12, 0.92) 100%), url('videos/posters/maint-interior-emerald-paint-finish-poster.jpg');">
         <div>
           <span class="maint-card-badge">Facility</span>
-          <h3 style="font-size: 1.3rem; color: #ffffff; margin: 0 0 8px;">Common Areas &amp; Facilities</h3>
-          <p style="margin: 0; font-size: 0.9rem; color: var(--paper-dim); line-height: 1.6;">
+          <h3 style="font-size: 1.35rem; color: #ffffff; margin: 0 0 8px;">Common Areas &amp; Facilities</h3>
+          <p style="margin: 0; font-size: 0.92rem; color: #e2e8f0; line-height: 1.6;">
             Ongoing upkeep for lobbies, hallways, shared lighting, stairwells, and property amenities.
           </p>
         </div>
@@ -306,17 +320,212 @@
       </div>
 
       <!-- CARD 3: GENERAL REPAIRS -->
-      <div class="maint-sheen-card">
+      <div class="maint-sheen-card" style="background-image: linear-gradient(180deg, rgba(8, 22, 14, 0.76) 0%, rgba(8, 16, 12, 0.92) 100%), url('photos/maint-floor-joists-framing-insulation.jpg');">
         <div>
           <span class="maint-card-badge">Repairs</span>
-          <h3 style="font-size: 1.3rem; color: #ffffff; margin: 0 0 8px;">General Repairs</h3>
-          <p style="margin: 0; font-size: 0.9rem; color: var(--paper-dim); line-height: 1.6;">
-            Prompt on-demand repairs for doors, locks, drywall, plumbing fixtures, and general property hardware.
+          <h3 style="font-size: 1.35rem; color: #ffffff; margin: 0 0 8px;">Everyday Repairs</h3>
+          <p style="margin: 0; font-size: 0.92rem; color: #e2e8f0; line-height: 1.6;">
+            Drywall patches, door hardware, basic plumbing fixtures, electrical switches, and responsive work orders.
           </p>
         </div>
-        <a href="#contact" class="btn btn-outline" style="border-color: rgba(74, 222, 128, 0.4); width: 100%; text-align: center; margin-top: 1.6rem;">
-          Request General Repair
+        <a href="#contact" class="btn btn-outline" style="border-color: rgba(74, 222, 128, 0.5); width: 100%; text-align: center; margin-top: 1.6rem; color: #fff;">
+          Schedule Property Repair
         </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ FIELD WORK & TURNOVERS GALLERY ============ -->
+<section class="field-gallery-section" id="gallery">
+  <div class="container">
+    
+    <div class="section-head center" style="margin-bottom: 2rem;">
+      <div class="eyebrow" style="color: #4ade80; justify-content: center;">Field Work &amp; Turnovers</div>
+      <h2>Recent Maintenance Projects</h2>
+      <p style="max-width: 620px; margin: 0 auto; color: var(--paper-dim); font-size: 0.95rem;">
+        Real video clips and photos of unit turnovers, interior painting, carpentry, and plumbing repairs.
+      </p>
+    </div>
+
+    <!-- Category Filter Pills -->
+    <div class="field-filter-bar">
+      <button class="field-filter-pill active" data-filter="all">All Projects (13)</button>
+      <button class="field-filter-pill" data-filter="painting">Interior Painting</button>
+      <button class="field-filter-pill" data-filter="carpentry">Carpentry &amp; Floors</button>
+      <button class="field-filter-pill" data-filter="turnover">Unit Turnovers</button>
+      <button class="field-filter-pill" data-filter="plumbing">Plumbing &amp; Drains</button>
+    </div>
+
+    <div class="field-gallery-grid" id="maint-gallery-grid">
+      
+      <!-- Video 1: Emerald Paint Finish -->
+      <div class="field-card" data-category="painting" data-media-type="video" data-media-src="videos/maint-interior-emerald-paint-finish.mp4" data-title="Emerald Green Paint &amp; Trim" data-desc="Rolling fresh paint and cutting crisp white trim." tabindex="0" role="button" aria-label="Play Emerald Green Paint &amp; Trim">
+        <div class="field-card-media">
+          <img src="videos/posters/maint-interior-emerald-paint-finish-poster.jpg" alt="Emerald Green Paint Finish" loading="lazy">
+        </div>
+        <div class="field-card-caption">
+          <h4 class="field-card-title">Emerald Green Paint &amp; Trim</h4>
+          <p class="field-card-desc">Rolling fresh paint &amp; crisp white trim.</p>
+        </div>
+        <div class="field-play-overlay" aria-hidden="true">
+          <div class="field-play-btn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- Video 2: Room Paint Tape Prep -->
+      <div class="field-card" data-category="painting" data-media-type="video" data-media-src="videos/maint-room-paint-tape-prep.mp4" data-title="Tape &amp; Room Prep" data-desc="Taping baseboards and vents before painting." tabindex="0" role="button" aria-label="Play Tape &amp; Room Prep">
+        <div class="field-card-media">
+          <img src="videos/posters/maint-room-paint-tape-prep-poster.jpg" alt="Baseboard Masking Prep" loading="lazy">
+        </div>
+        <div class="field-card-caption">
+          <h4 class="field-card-title">Tape &amp; Room Prep</h4>
+          <p class="field-card-desc">Taping baseboards and vents clean.</p>
+        </div>
+        <div class="field-play-overlay" aria-hidden="true">
+          <div class="field-play-btn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- Video 3: Subfloor Joist Demo & Framing -->
+      <div class="field-card" data-category="carpentry" data-media-type="video" data-media-src="videos/maint-subfloor-joist-demo-framing.mp4" data-title="Subfloor &amp; Joist Repair" data-desc="Tearing out rotted subfloor and reinforcing joists." tabindex="0" role="button" aria-label="Play Subfloor &amp; Joist Repair">
+        <div class="field-card-media">
+          <img src="videos/posters/maint-subfloor-joist-demo-framing-poster.jpg" alt="Subfloor Demo &amp; Framing" loading="lazy">
+        </div>
+        <div class="field-card-caption">
+          <h4 class="field-card-title">Subfloor &amp; Joist Repair</h4>
+          <p class="field-card-desc">Tearing out rotted floor &amp; adding framing.</p>
+        </div>
+        <div class="field-play-overlay" aria-hidden="true">
+          <div class="field-play-btn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- Video 4: Bathroom Remodel Walkthrough -->
+      <div class="field-card" data-category="turnover" data-media-type="video" data-media-src="videos/maint-bathroom-remodel-walkthrough.mp4" data-title="Bathroom Remodel" data-desc="Finished tub, walls, and vanity ready for move-in." tabindex="0" role="button" aria-label="Play Bathroom Remodel">
+        <div class="field-card-media">
+          <img src="videos/posters/maint-bathroom-remodel-walkthrough-poster.jpg" alt="Bathroom Turnover Walkthrough" loading="lazy">
+        </div>
+        <div class="field-card-caption">
+          <h4 class="field-card-title">Bathroom Remodel</h4>
+          <p class="field-card-desc">New tub, tile, and vanity ready to go.</p>
+        </div>
+        <div class="field-play-overlay" aria-hidden="true">
+          <div class="field-play-btn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- Video 5: Bedroom Turnover Walkthrough -->
+      <div class="field-card" data-category="turnover" data-media-type="video" data-media-src="videos/maint-bedroom-turnover-walkthrough.mp4" data-title="Bedroom Turnover" data-desc="Fresh paint, door fixes, and punch list cleanup." tabindex="0" role="button" aria-label="Play Bedroom Turnover">
+        <div class="field-card-media">
+          <img src="videos/posters/maint-bedroom-turnover-walkthrough-poster.jpg" alt="Bedroom Turnover Walkthrough" loading="lazy">
+        </div>
+        <div class="field-card-caption">
+          <h4 class="field-card-title">Bedroom Turnover</h4>
+          <p class="field-card-desc">Fresh paint, doors, and move-in cleanup.</p>
+        </div>
+        <div class="field-play-overlay" aria-hidden="true">
+          <div class="field-play-btn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- Photo 1: OSB Subfloor Installation -->
+      <div class="field-card" data-category="carpentry" data-media-type="image" data-media-src="photos/maint-subfloor-osb-installation.jpg" data-title="New Subfloor Wood" data-desc="Laying brand new subfloor sheets so floors don't squeak." tabindex="0" role="button" aria-label="View New Subfloor Wood">
+        <div class="field-card-media">
+          <img src="photos/maint-subfloor-osb-installation.jpg" alt="New Subfloor Wood" loading="lazy">
+        </div>
+        <div class="field-card-caption">
+          <h4 class="field-card-title">New Subfloor Wood</h4>
+          <p class="field-card-desc">Laying flat new wood so floors don't squeak.</p>
+        </div>
+      </div>
+
+      <!-- Photo 2: Bathtub Sledgehammer Demo -->
+      <div class="field-card" data-category="turnover" data-media-type="image" data-media-src="photos/maint-bathtub-sledgehammer-demo.jpg" data-title="Bathtub Demo" data-desc="Taking a sledgehammer to an old heavy tub." tabindex="0" role="button" aria-label="View Bathtub Demo">
+        <div class="field-card-media">
+          <img src="photos/maint-bathtub-sledgehammer-demo.jpg" alt="Bathtub Demo" loading="lazy">
+        </div>
+        <div class="field-card-caption">
+          <h4 class="field-card-title">Bathtub Demo</h4>
+          <p class="field-card-desc">Smashing out the old tub to start fresh.</p>
+        </div>
+      </div>
+
+      <!-- Photo 3: Floor Joists & Insulation Setup -->
+      <div class="field-card" data-category="carpentry" data-media-type="image" data-media-src="photos/maint-floor-joists-framing-insulation.jpg" data-title="Floor Joists &amp; Insulation" data-desc="Framing new floor supports and laying fresh insulation." tabindex="0" role="button" aria-label="View Floor Joists &amp; Insulation">
+        <div class="field-card-media">
+          <img src="photos/maint-floor-joists-framing-insulation.jpg" alt="Floor Joists &amp; Insulation" loading="lazy">
+        </div>
+        <div class="field-card-caption">
+          <h4 class="field-card-title">Floor Joists &amp; Insulation</h4>
+          <p class="field-card-desc">Framing new beams and fresh insulation.</p>
+        </div>
+      </div>
+
+      <!-- Photo 4: Drain Pipe Concrete Trenching -->
+      <div class="field-card" data-category="plumbing" data-media-type="image" data-media-src="photos/maint-drain-pipe-concrete-trenching.jpg" data-title="Chipping Concrete for Drain" data-desc="Breaking through the slab to run a new drain line." tabindex="0" role="button" aria-label="View Chipping Concrete for Drain">
+        <div class="field-card-media">
+          <img src="photos/maint-drain-pipe-concrete-trenching.jpg" alt="Chipping Concrete for Drain" loading="lazy">
+        </div>
+        <div class="field-card-caption">
+          <h4 class="field-card-title">Chipping Concrete for Drain</h4>
+          <p class="field-card-desc">Breaking through slab for a new drain line.</p>
+        </div>
+      </div>
+
+      <!-- Photo 5: Pipe Rough-In Slab Chiseling -->
+      <div class="field-card" data-category="plumbing" data-media-type="image" data-media-src="photos/maint-pipe-roughin-slab-chiseling.jpg" data-title="Underfloor Pipe Excavation" data-desc="Chipping down to find and move an old pipe." tabindex="0" role="button" aria-label="View Underfloor Pipe Excavation">
+        <div class="field-card-media">
+          <img src="photos/maint-pipe-roughin-slab-chiseling.jpg" alt="Underfloor Pipe Excavation" loading="lazy">
+        </div>
+        <div class="field-card-caption">
+          <h4 class="field-card-title">Underfloor Pipe Excavation</h4>
+          <p class="field-card-desc">Chipping down to move underground pipes.</p>
+        </div>
+      </div>
+
+      <!-- Photo 6: Commercial Floor Drain Clearing -->
+      <div class="field-card" data-category="plumbing" data-media-type="image" data-media-src="photos/maint-commercial-kitchen-drain-clearing.jpg" data-title="Clearing Backed-up Drain" data-desc="Snaking out a clogged commercial kitchen floor drain." tabindex="0" role="button" aria-label="View Clearing Backed-up Drain">
+        <div class="field-card-media">
+          <img src="photos/maint-commercial-kitchen-drain-clearing.jpg" alt="Clearing Backed-up Drain" loading="lazy">
+        </div>
+        <div class="field-card-caption">
+          <h4 class="field-card-title">Clearing Backed-up Drain</h4>
+          <p class="field-card-desc">Snaking out a stubborn kitchen floor drain.</p>
+        </div>
+      </div>
+
+      <!-- Photo 7: PVC Reducer Coupling Fitting -->
+      <div class="field-card" data-category="plumbing" data-media-type="image" data-media-src="photos/maint-pvc-drain-reducer-fitting.jpg" data-title="PVC Drain Connection" data-desc="Gluing up new PVC drain fittings." tabindex="0" role="button" aria-label="View PVC Drain Connection">
+        <div class="field-card-media">
+          <img src="photos/maint-pvc-drain-reducer-fitting.jpg" alt="PVC Drain Connection" loading="lazy">
+        </div>
+        <div class="field-card-caption">
+          <h4 class="field-card-title">PVC Drain Connection</h4>
+          <p class="field-card-desc">Gluing up new drain fittings cleanly.</p>
+        </div>
+      </div>
+
+      <!-- Photo 8: Copper Water Line Valve Repair -->
+      <div class="field-card" data-category="plumbing" data-media-type="image" data-media-src="photos/maint-copper-pipe-push-valve-repair.jpg" data-title="Fixing Copper Water Line" data-desc="Installing a quick new shutoff valve on a copper pipe." tabindex="0" role="button" aria-label="View Fixing Copper Water Line">
+        <div class="field-card-media">
+          <img src="photos/maint-copper-pipe-push-valve-repair.jpg" alt="Fixing Copper Water Line" loading="lazy">
+        </div>
+        <div class="field-card-caption">
+          <h4 class="field-card-title">Fixing Copper Water Line</h4>
+          <p class="field-card-desc">Installed a brand new shutoff valve.</p>
+        </div>
       </div>
 
     </div>
@@ -410,6 +619,29 @@
     </div>
   </div>
 </footer>
+
+<!-- Universal Lightbox Modal -->
+<div class="universal-media-modal" id="universal-modal" role="dialog" aria-modal="true" aria-label="Media Preview">
+  <div class="universal-media-dialog">
+    <button class="universal-modal-close" id="universal-modal-close" aria-label="Close dialog">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <button class="universal-modal-nav-prev" id="universal-modal-prev" aria-label="Previous item">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+    </button>
+    <button class="universal-modal-nav-next" id="universal-modal-next" aria-label="Next item">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+    </button>
+    <div class="universal-modal-media-wrap">
+      <img class="universal-modal-img" id="universal-modal-img" alt="">
+      <video class="universal-modal-video" id="universal-modal-video" controls playsinline></video>
+    </div>
+    <div class="universal-modal-footer">
+      <h4 class="universal-modal-title" id="universal-modal-title"></h4>
+      <p class="universal-modal-desc" id="universal-modal-desc"></p>
+    </div>
+  </div>
+</div>
 
 <script src="js/main.js"></script>
 </body>
