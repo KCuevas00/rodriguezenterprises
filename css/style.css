@@ -2101,7 +2101,7 @@ table.price-table{ width:100%; border-collapse: collapse; min-width: 640px; }
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%) scale(0.92);
+  transform: translate(-50%, -50%);
   width: 48px;
   height: 48px;
   border-radius: 50%;
@@ -2113,14 +2113,22 @@ table.price-table{ width:100%; border-collapse: collapse; min-width: 640px; }
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
   z-index: 3;
   transition: transform 0.25s ease, background 0.25s ease, opacity 0.25s ease;
+  pointer-events: none;
+  padding: 0;
+  line-height: 0;
+  box-sizing: border-box;
 }
 
 .reel-play-overlay svg {
-  margin-left: 3px;
+  display: block;
+  width: 22px;
+  height: 22px;
+  margin: 0;
+  flex-shrink: 0;
 }
 
 .vibez-reel-card:hover .reel-play-overlay {
-  transform: translate(-50%, -50%) scale(1.08);
+  transform: translate(-50%, -50%) scale(1.1);
   background: #f472b6;
 }
 
@@ -2540,9 +2548,9 @@ body.maint .field-card:hover {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%) scale(0.95);
-  width: 54px;
-  height: 54px;
+  transform: translate(-50%, -50%);
+  width: 52px;
+  height: 52px;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -2551,10 +2559,26 @@ body.maint .field-card:hover {
   z-index: 3;
   transition: transform 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
   pointer-events: none;
+  padding: 0;
+  line-height: 0;
+  box-sizing: border-box;
 }
 
-.field-play-overlay svg {
-  margin-left: 3px;
+.field-play-overlay svg,
+.field-play-btn svg {
+  display: block;
+  width: 22px;
+  height: 22px;
+  margin: 0;
+  flex-shrink: 0;
+}
+
+.field-play-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
 }
 
 body.repair .field-play-overlay {
