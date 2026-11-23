@@ -29,6 +29,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (mobileBackdrop) mobileBackdrop.classList.add('open');
     if (mobileToggle) mobileToggle.setAttribute('aria-expanded', 'true');
     document.body.style.overflow = 'hidden';
+    document.body.classList.add('drawer-open');
     updateHeaderScroll();
   }
 
@@ -37,6 +38,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (mobileBackdrop) mobileBackdrop.classList.remove('open');
     if (mobileToggle) mobileToggle.setAttribute('aria-expanded', 'false');
     document.body.style.overflow = '';
+    document.body.classList.remove('drawer-open');
     updateHeaderScroll();
   }
 

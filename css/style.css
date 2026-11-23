@@ -517,7 +517,7 @@ a.island-craft-badge.vibez:hover{
   background: rgba(0, 0, 0, 0.75);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  z-index: 1050;
+  z-index: 10050;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1);
@@ -545,7 +545,7 @@ a.island-craft-badge.vibez:hover{
   display: flex;
   flex-direction: column;
   gap: 1.15rem;
-  z-index: 1060;
+  z-index: 10060;
   overflow-y: auto;
   opacity: 0;
   transform: translateY(-16px) scale(0.98);
@@ -755,44 +755,109 @@ a.island-craft-badge.vibez:hover{
   border-color: var(--gold);
 }
 
-.mobile-drawer-phone-card{
+.mobile-drawer-phone-card {
   display: flex;
   flex-direction: column;
-  gap: 0.45rem;
-  background: linear-gradient(135deg, rgba(201, 162, 75, 0.12) 0%, rgba(140, 105, 36, 0.08) 100%);
-  border: 1.5px solid rgba(201, 162, 75, 0.35);
+  gap: 0.65rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 14px;
-  padding: 0.9rem 1.1rem;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  padding: 0.85rem 1rem;
+  transition: border-color var(--transition-fast);
 }
 
-.drawer-phone-label{
-  font-size: 0.68rem;
+.mobile-drawer-phone-card:hover {
+  border-color: rgba(201, 162, 75, 0.35);
+}
+
+.drawer-phone-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.drawer-phone-label {
+  font-size: 0.72rem;
   text-transform: uppercase;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.12em;
   font-weight: 700;
-  color: var(--gold);
+  color: var(--paper-dim);
 }
 
-.drawer-phone-btn{
+.drawer-bilingual-badge {
   display: inline-flex;
   align-items: center;
-  gap: 0.65rem;
-  font-size: 1.1rem;
+  gap: 4px;
+  padding: 3px 9px;
+  border-radius: 20px;
+  background: rgba(37, 211, 102, 0.12);
+  border: 1px solid rgba(37, 211, 102, 0.3);
+  color: #4ade80;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.drawer-phone-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.drawer-phone-btn {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  background: linear-gradient(135deg, rgba(201, 162, 75, 0.18) 0%, rgba(140, 105, 36, 0.12) 100%);
+  border: 1px solid rgba(201, 162, 75, 0.4);
+  border-radius: 10px;
+  padding: 9px 12px;
+  font-size: 0.98rem;
   font-weight: 700;
   color: #ffffff;
   text-decoration: none;
-  transition: color var(--transition-fast), transform var(--transition-fast);
+  transition: all var(--transition-fast);
 }
 
-.drawer-phone-btn svg{
+.drawer-phone-btn svg {
   color: var(--gold);
   flex-shrink: 0;
+  transition: color var(--transition-fast);
 }
 
-.drawer-phone-btn:hover{
-  color: var(--gold);
-  transform: translateX(2px);
+.drawer-phone-btn:hover {
+  background: linear-gradient(135deg, var(--gold) 0%, #a67c2e 100%);
+  color: #ffffff;
+  border-color: var(--gold);
+}
+
+.drawer-phone-btn:hover svg {
+  color: #ffffff;
+}
+
+.drawer-text-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  background: rgba(37, 211, 102, 0.12);
+  border: 1px solid rgba(37, 211, 102, 0.3);
+  border-radius: 10px;
+  padding: 9px 14px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #4ade80;
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+.drawer-text-btn:hover {
+  background: #25D366;
+  border-color: #25D366;
+  color: #ffffff;
 }
 
 .mobile-drawer-footer{
@@ -3229,6 +3294,17 @@ body.maint .field-card:hover .field-play-overlay {
     bottom: 68px;
     right: 0;
   }
+}
+
+/* Hide floating contact widget when mobile drawer is open to prevent collision */
+body.drawer-open .floating-contact-widget,
+.mobile-nav-drawer.open ~ .floating-contact-widget,
+.mobile-drawer-backdrop.open ~ .floating-contact-widget {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  transform: scale(0.8) !important;
+  transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
 /* ============================================================
