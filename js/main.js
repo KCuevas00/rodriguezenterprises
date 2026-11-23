@@ -200,14 +200,140 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  // ---- Package Selection and Smooth Scroll to Direct Booking ----
+  var pkgDetailsMap = {
+    'Silver': {
+      title: 'Silver Package',
+      details: 'Up to 60 guests · 4 hrs · 1 Licensed Bartender · 2 Custom Cocktails',
+      smsText: 'Hi! I would like to book the Silver Package (up to 60 guests) for my event.'
+    },
+    'Gold': {
+      title: 'Gold Package',
+      details: '60–75 guests · 4 hrs · 1 Licensed Bartender · 3 Custom Cocktails (Most Popular)',
+      smsText: 'Hi! I would like to book the Gold Package (60-75 guests) for my event.'
+    },
+    'Platinum': {
+      title: 'Platinum Package',
+      details: '75–100 guests · 5 hrs · 2 Licensed Bartenders · 3 Custom Cocktails · Custom Decor',
+      smsText: 'Hi! I would like to book the Platinum Package (75-100 guests) for my event.'
+    },
+    'Diamond': {
+      title: 'Diamond Package',
+      details: '100+ guests · 5 hrs · 2 Licensed Bartenders · 4 Custom Cocktails · Choice of Add-On',
+      smsText: 'Hi! I would like to book the Diamond Package (100+ guests) for my event.'
+    }
+  };
+
+  var pkgBanner = document.getElementById('vibezSelectedPkgBanner');
+  var pkgTitleEl = document.getElementById('selectedPkgTitle');
+  var pkgDetailsEl = document.getElementById('selectedPkgDetails');
+  var clearPkgBtn = document.getElementById('clearSelectedPkg');
+  var contactBox = document.getElementById('vibezContactBox');
+  var contactHeading = document.getElementById('vibezContactHeading');
+  var callBtnText = document.getElementById('vibezCallBtnText');
+  var textBtn = document.getElementById('vibezTextBtn');
+  var textBtnText = document.getElementById('vibezTextBtnText');
+
+  function selectAndScrollToPackage(pkgName) {
+    var pkgData = pkgDetailsMap[pkgName] || {
+      title: pkgName + ' Package',
+      details: 'Tailored for your event',
+      smsText: 'Hi! I would like to book the ' + pkgName + ' Package for my event.'
+    };
+
+    if (pkgBanner && pkgTitleEl && pkgDetailsEl) {
+      pkgTitleEl.textContent = pkgData.title;
+      pkgDetailsEl.textContent = pkgData.details;
+      pkgBanner.style.display = 'flex';
+    }
+
+    if (contactHeading) {
+      contactHeading.textContent = 'Book the ' + pkgData.title;
+    }
+
+    if (callBtnText) {
+      callBtnText.textContent = 'Call (630) 465-7063 to Book ' + pkgName;
+    }
+
+    if (textBtn) {
+      textBtn.href = 'sms:+16304657063?body=' + encodeURIComponent(pkgData.smsText);
+    }
+    if (textBtnText) {
+      textBtnText.textContent = 'Text Us About ' + pkgName + ' Package';
+    }
+
+    // Smooth scroll down to contact section with header offset
+    var target = document.getElementById('quote');
+    if (target) {
+      var headerDock = document.getElementById('main-header');
+      var headerH = headerDock ? headerDock.offsetHeight : 70;
+      var targetTop = target.getBoundingClientRect().top + window.pageYOffset - (headerH + 20);
+
+      window.scrollTo({
+        top: Math.max(0, targetTop),
+        behavior: 'smooth'
+      });
+      if (window.history && window.history.pushState) {
+        window.history.pushState(null, null, '#quote');
+      }
+    }
+
+    // Trigger visual pulse glow on contact box
+    if (contactBox) {
+      contactBox.classList.remove('highlight-pulse');
+      void contactBox.offsetWidth; // re-flow to restart animation
+      contactBox.classList.add('highlight-pulse');
+    }
+  }
+
+  // Hook up all Book Package buttons
   document.querySelectorAll('[data-select-pkg]').forEach(function (btn) {
-    btn.addEventListener('click', function () {
+    btn.addEventListener('click', function (e) {
+      e.preventDefault();
       var pkgName = btn.getAttribute('data-select-pkg');
       if (pkgName) {
-        syncPackageSelection(pkgName);
-        var textBtn = document.querySelector('.vibez-direct-contact-box .btn-direct-text');
-        if (textBtn) {
-          textBtn.href = 'sms:+16304657063?body=' + encodeURIComponent("Hi! I would like to book the " + pkgName + " Package for my event.");
+        selectAndScrollToPackage(pkgName);
+      }
+    });
+  });
+
+  // Clear package button
+  if (clearPkgBtn) {
+    clearPkgBtn.addEventListener('click', function () {
+      if (pkgBanner) pkgBanner.style.display = 'none';
+      if (contactHeading) contactHeading.textContent = 'Direct Booking & Date Availability';
+      if (callBtnText) callBtnText.textContent = 'Call (630) 465-7063';
+      if (textBtnText) textBtnText.textContent = 'Text Us Directly';
+      if (textBtn) {
+        textBtn.href = 'sms:+16304657063?body=' + encodeURIComponent("Hi! I would like to check availability and book Poured Up Vibez for an event.");
+      }
+    });
+  }
+
+  // Smooth scroll for internal anchor links (e.g. #quote, #contact, etc.)
+  document.querySelectorAll('a[href^="#"]:not([href="#"]):not([href="#top"]):not([data-select-pkg])').forEach(function (link) {
+    link.addEventListener('click', function (e) {
+      var hash = link.getAttribute('href');
+      if (hash && hash.length > 1) {
+        var target = document.querySelector(hash);
+        if (target) {
+          e.preventDefault();
+          var headerDock = document.getElementById('main-header');
+          var headerH = headerDock ? headerDock.offsetHeight : 70;
+          var targetTop = target.getBoundingClientRect().top + window.pageYOffset - (headerH + 20);
+          window.scrollTo({
+            top: Math.max(0, targetTop),
+            behavior: 'smooth'
+          });
+          if (window.history && window.history.pushState) {
+            window.history.pushState(null, null, hash);
+          }
+          var targetBox = target.querySelector('.vibez-direct-contact-box, .service-direct-contact-box') || target;
+          if (targetBox && targetBox.classList) {
+            targetBox.classList.remove('highlight-pulse');
+            void targetBox.offsetWidth;
+            targetBox.classList.add('highlight-pulse');
+          }
         }
       }
     });

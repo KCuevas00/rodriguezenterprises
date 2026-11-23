@@ -3312,3 +3312,172 @@ body.maint .field-card:hover .field-play-overlay {
   font-size: 0.88rem;
   color: var(--paper-dim);
 }
+
+/* ============================================================
+   PACKAGE ACTION BUTTONS & DYNAMIC BOOKING BANNER
+   ============================================================ */
+.catering-menu-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  margin-top: 1.35rem;
+}
+
+.catering-menu-actions .btn-book-package {
+  width: 100%;
+  justify-content: center;
+  font-size: 0.96rem;
+  font-weight: 700;
+  padding: 11px 18px;
+  box-shadow: 0 4px 16px rgba(244, 114, 182, 0.25);
+  cursor: pointer;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-fast);
+}
+
+.catering-menu-actions .btn-book-package:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(244, 114, 182, 0.45);
+}
+
+.catering-card-quick-contact {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 0.82rem;
+  color: var(--paper-dim);
+  padding-top: 2px;
+}
+
+.catering-card-quick-contact .quick-call-label {
+  color: var(--paper-dim);
+  opacity: 0.75;
+}
+
+.catering-card-quick-contact .quick-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: #f472b6;
+  text-decoration: none;
+  font-weight: 600;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.catering-card-quick-contact .quick-link:hover {
+  opacity: 0.85;
+  transform: translateY(-1px);
+}
+
+.catering-card-quick-contact .quick-sep {
+  opacity: 0.35;
+  color: var(--paper-dim);
+}
+
+/* Dynamic Selected Package Banner inside Contact Box */
+.vibez-selected-pkg-banner {
+  background: linear-gradient(135deg, rgba(244, 114, 182, 0.22), rgba(92, 42, 77, 0.45));
+  border: 1.5px solid rgba(244, 114, 182, 0.55);
+  border-radius: 12px;
+  padding: 14px 18px;
+  margin-bottom: 1.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  text-align: left;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  animation: bannerFadeIn 0.35s ease;
+}
+
+@keyframes bannerFadeIn {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.selected-pkg-badge {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.selected-pkg-icon {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.selected-pkg-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.selected-pkg-lead {
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #f472b6;
+  font-weight: 800;
+}
+
+.selected-pkg-title {
+  font-size: 1.18rem;
+  color: #ffffff;
+  font-family: var(--font-heading);
+  line-height: 1.25;
+}
+
+.selected-pkg-details {
+  font-size: 0.84rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-top: 2px;
+}
+
+.selected-pkg-clear-btn {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  color: #ffffff;
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.selected-pkg-clear-btn:hover {
+  background: rgba(244, 114, 182, 0.25);
+  border-color: #f472b6;
+  color: #ffffff;
+}
+
+/* Glow highlight pulse when user clicks Book Package or anchor links */
+.vibez-direct-contact-box.highlight-pulse,
+.service-direct-contact-box.highlight-pulse {
+  animation: contactGlowPulse 2.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes contactGlowPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(244, 114, 182, 0.75), 0 10px 40px rgba(0,0,0,0.5);
+    border-color: #f472b6;
+  }
+  40% {
+    box-shadow: 0 0 45px 12px rgba(244, 114, 182, 0.55), 0 10px 40px rgba(0,0,0,0.5);
+    border-color: #f472b6;
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(244, 114, 182, 0), 0 10px 40px rgba(0,0,0,0.5);
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+}
+
+@media (max-width: 600px) {
+  .vibez-selected-pkg-banner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .selected-pkg-clear-btn {
+    align-self: flex-start;
+  }
+}
