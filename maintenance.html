@@ -680,46 +680,31 @@
       <h2>Tell us about your property</h2>
     </div>
 
-    <div class="form-panel" style="max-width: 680px; margin: 0 auto; border: 1px solid rgba(74, 222, 128, 0.25);">
-      <form data-form>
-        <div class="form-row">
-          <div class="field">
-            <label for="name">Full name</label>
-            <input type="text" id="name" placeholder="Your name" required>
-          </div>
-          <div class="field">
-            <label for="email">Email</label>
-            <input type="email" id="email" placeholder="name@example.com" required>
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="field">
-            <label for="property">Property Type</label>
-            <select id="property">
-              <option>Single Residential Unit</option>
-              <option>Apartment Building (2–10 Units)</option>
-              <option>Large Complex (10+ Units)</option>
-              <option>Commercial Property</option>
-            </select>
-          </div>
-          <div class="field">
-            <label for="scope">Service Frequency</label>
-            <select id="scope">
-              <option>One-Time Repair / Turnover</option>
-              <option>Ongoing / Recurring Maintenance</option>
-              <option>Undecided / Custom</option>
-            </select>
-          </div>
-        </div>
-        <div class="field">
-          <label for="details">Work Details</label>
-          <textarea id="details" placeholder="Describe the property location and needed repairs or upkeep..."></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary" style="width: 100%; padding: 14px; font-size: 1rem;">
-          Send Maintenance Request →
-        </button>
-      </form>
-      <div class="form-success">Thanks — we'll follow up promptly to discuss your property's needs.</div>
+    <div class="service-direct-contact-box" style="max-width: 680px; margin: 0 auto; border: 1px solid rgba(74, 222, 128, 0.25);">
+      <h3 class="service-contact-title">Direct Property Scope &amp; Estimates</h3>
+      <p class="service-contact-sub">
+        Call or text us directly for quick apartment turnover quotes, drywall repairs, paint walkthroughs, or commercial maintenance contracts.
+      </p>
+
+      <div class="service-contact-btn-group">
+        <a href="tel:+16304657063" class="btn btn-primary btn-direct-call" style="background: #16a34a; border-color: #16a34a;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span>Call (630) 465-7063</span>
+        </a>
+
+        <a href="sms:+16304657063?body=Hi!%20I%20have%20a%20property%20maintenance%20inquiry." class="btn-direct-text">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          <span>Text Us Directly</span>
+        </a>
+      </div>
+
+      <div class="service-contact-perks">
+        <span>⚡ Fast Turnaround Times</span>
+        <span>•</span>
+        <span>🏢 Residential &amp; Commercial</span>
+        <span>•</span>
+        <span>🇲🇽 Se Habla Español</span>
+      </div>
     </div>
   </div>
 </section>
@@ -755,10 +740,44 @@
     </div>
     <div class="footer-bottom">
       <span>© 2026 Rodriguez Enterprises. All rights reserved.</span>
-      <span>Licensed &amp; Insured · Chicago, IL</span>
+      <span>Se Habla Español! · Licensed &amp; Insured · Chicago, IL</span>
     </div>
   </div>
 </footer>
+
+<!-- Floating Static Text/Call Action Widget (Bottom-Right Circle) -->
+<div class="floating-contact-widget" id="floatingContactWidget">
+  <div class="floating-contact-card" id="floatingContactCard" aria-hidden="true">
+    <div class="floating-card-header">
+      <div class="floating-card-title-group">
+        <span class="floating-online-dot"></span>
+        <div>
+          <span class="floating-card-brand">Direct Dispatch &amp; Booking</span>
+          <span class="floating-card-sub">Se Habla Español!</span>
+        </div>
+      </div>
+      <button class="floating-card-close" id="floatingCardClose" aria-label="Close contact card">✕</button>
+    </div>
+    <div class="floating-card-body">
+      <p class="floating-card-phone">(630) 465-7063</p>
+      <div class="floating-card-actions">
+        <a href="tel:+16304657063" class="floating-action-btn btn-call" id="floatCallBtn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span>Call Now</span>
+        </a>
+        <a href="sms:+16304657063" class="floating-action-btn btn-text" id="floatTextBtn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          <span>Send Text</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <button class="floating-contact-trigger" id="floatingContactTrigger" aria-label="Call or text (630) 465-7063" title="Call or text (630) 465-7063">
+    <span class="floating-trigger-pulse"></span>
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+  </button>
+</div>
 
 <!-- Universal Lightbox Modal -->
 <div class="universal-media-modal" id="universal-modal" role="dialog" aria-modal="true" aria-label="Media Preview">

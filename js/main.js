@@ -203,9 +203,40 @@ document.addEventListener('DOMContentLoaded', function () {
   document.querySelectorAll('[data-select-pkg]').forEach(function (btn) {
     btn.addEventListener('click', function () {
       var pkgName = btn.getAttribute('data-select-pkg');
-      if (pkgName) syncPackageSelection(pkgName);
+      if (pkgName) {
+        syncPackageSelection(pkgName);
+        var textBtn = document.querySelector('.vibez-direct-contact-box .btn-direct-text');
+        if (textBtn) {
+          textBtn.href = 'sms:+16304657063?body=' + encodeURIComponent("Hi! I would like to book the " + pkgName + " Package for my event.");
+        }
+      }
     });
   });
+
+  // ---- Floating Call & Text Circle Widget ----
+  var floatWidget = document.getElementById('floatingContactWidget');
+  var floatTrigger = document.getElementById('floatingContactTrigger');
+  var floatClose = document.getElementById('floatingCardClose');
+
+  if (floatTrigger && floatWidget) {
+    floatTrigger.addEventListener('click', function (e) {
+      e.stopPropagation();
+      floatWidget.classList.toggle('active');
+    });
+
+    if (floatClose) {
+      floatClose.addEventListener('click', function (e) {
+        e.stopPropagation();
+        floatWidget.classList.remove('active');
+      });
+    }
+
+    document.addEventListener('click', function (e) {
+      if (!floatWidget.contains(e.target)) {
+        floatWidget.classList.remove('active');
+      }
+    });
+  }
 
   // ---- 6. Generic form handling ----
   document.querySelectorAll('form[data-form]').forEach(function (form) {
