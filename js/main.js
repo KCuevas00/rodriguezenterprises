@@ -138,20 +138,20 @@ document.addEventListener('DOMContentLoaded', function () {
 
       if (count <= 60) {
         if (recommendedPkg) recommendedPkg.textContent = 'Silver Package';
-        if (recommendedPrice) recommendedPrice.textContent = '$600';
+        if (recommendedPrice) recommendedPrice.textContent = 'Up to 60 Guests';
         if (recommendedDesc) recommendedDesc.textContent = '4 Hours • 1 Licensed Bartender • 2 Signature Drinks';
       } else if (count <= 75) {
         if (recommendedPkg) recommendedPkg.textContent = 'Gold Package (Most Popular)';
-        if (recommendedPrice) recommendedPrice.textContent = '$800';
+        if (recommendedPrice) recommendedPrice.textContent = '60–75 Guests';
         if (recommendedDesc) recommendedDesc.textContent = '4 Hours • 1 Licensed Bartender • 3 Signature Drinks';
       } else if (count <= 100) {
         if (recommendedPkg) recommendedPkg.textContent = 'Platinum Package';
-        if (recommendedPrice) recommendedPrice.textContent = '$950';
-        if (recommendedDesc) recommendedDesc.textContent = '5 Hours • 2 Licensed Bartenders • 4 Signature Drinks • Premium Garnish & Decor';
+        if (recommendedPrice) recommendedPrice.textContent = '75–100 Guests';
+        if (recommendedDesc) recommendedDesc.textContent = '5 Hours • 2 Licensed Bartenders • 3 Signature Drinks • Custom Party Decor & Premium Garnish';
       } else {
         if (recommendedPkg) recommendedPkg.textContent = 'Diamond Package';
-        if (recommendedPrice) recommendedPrice.textContent = '$1,200';
-        if (recommendedDesc) recommendedDesc.textContent = '5 Hours • 2 Licensed Bartenders • 4 Signature Drinks • Garnish, Decor & Choice of Add-on';
+        if (recommendedPrice) recommendedPrice.textContent = '100+ Guests';
+        if (recommendedDesc) recommendedDesc.textContent = '5 Hours • 2 Licensed Bartenders • 4 Signature Drinks • Garnish, Custom Decor & Choice of Add-on';
       }
     });
   }

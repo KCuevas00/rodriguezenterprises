@@ -1,0 +1,6 @@
+# Scratch and temporary directories
+scratch/
+videos/backup_originals/
+*.tmp
+.DS_Store
+Thumbs.db
