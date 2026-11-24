@@ -377,7 +377,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // ---- 6. Generic form handling ----
+  // ---- 6. Form Submission: Auto-format and submit directly to phone via SMS (630) 465-7063 ----
   document.querySelectorAll('form[data-form]').forEach(function (form) {
     form.addEventListener('submit', function (e) {
       e.preventDefault();
@@ -385,17 +385,118 @@ document.addEventListener('DOMContentLoaded', function () {
       var requiredFields = form.querySelectorAll('[required]');
       var valid = true;
       requiredFields.forEach(function (field) {
-        if (!field.value.trim()) valid = false;
+        if (!field.value.trim()) {
+          valid = false;
+          field.focus();
+        }
       });
       if (!valid) return;
 
+      var pagePath = window.location.pathname.toLowerCase();
+      var smsLines = [];
+
+      var nameVal = (form.querySelector('#name') && form.querySelector('#name').value.trim()) || '';
+      var phoneVal = (form.querySelector('#phone') && form.querySelector('#phone').value.trim()) || '';
+      var emailVal = (form.querySelector('#email') && form.querySelector('#email').value.trim()) || '';
+      var dateVal = (form.querySelector('#date') && form.querySelector('#date').value.trim()) || '';
+      var guestsVal = (form.querySelector('#guests') && form.querySelector('#guests').value.trim()) || '';
+      var locationVal = (form.querySelector('#location') && form.querySelector('#location').value.trim()) || '';
+      var packageEl = form.querySelector('#package');
+      var packageVal = '';
+      if (packageEl) {
+        if (packageEl.tagName === 'SELECT' && packageEl.selectedIndex >= 0) {
+          packageVal = packageEl.options[packageEl.selectedIndex].text.replace(/\s+/g, ' ').trim();
+        } else {
+          packageVal = packageEl.value.trim();
+        }
+      }
+      var serviceEl = form.querySelector('#service');
+      var serviceVal = serviceEl ? (serviceEl.options ? serviceEl.options[serviceEl.selectedIndex].text : serviceEl.value).trim() : '';
+      var applianceEl = form.querySelector('#appliance');
+      var applianceVal = applianceEl ? (applianceEl.options ? applianceEl.options[applianceEl.selectedIndex].text : applianceEl.value).trim() : '';
+      var brandVal = (form.querySelector('#brand') && form.querySelector('#brand').value.trim()) || '';
+      var propertyEl = form.querySelector('#property');
+      var propertyVal = propertyEl ? (propertyEl.options ? propertyEl.options[propertyEl.selectedIndex].text : propertyEl.value).trim() : '';
+      var scopeEl = form.querySelector('#scope');
+      var scopeVal = scopeEl ? (scopeEl.options ? scopeEl.options[scopeEl.selectedIndex].text : scopeEl.value).trim() : '';
+      var detailsVal = (form.querySelector('#details') && form.querySelector('#details').value.trim()) ||
+                       (form.querySelector('#message') && form.querySelector('#message').value.trim()) || '';
+
+      if (pagePath.includes('vibez') || form.querySelector('#guests') || form.querySelector('#package')) {
+        smsLines.push('🍹 POURED UP VIBEZ BOOKING REQUEST');
+        if (nameVal) smsLines.push('• Name: ' + nameVal);
+        if (phoneVal) smsLines.push('• Phone: ' + phoneVal);
+        if (emailVal) smsLines.push('• Email: ' + emailVal);
+        if (dateVal) smsLines.push('• Date: ' + dateVal);
+        if (guestsVal) smsLines.push('• Guests: ' + guestsVal);
+        if (locationVal) smsLines.push('• Location: ' + locationVal);
+        if (packageVal) smsLines.push('• Package: ' + packageVal);
+        if (detailsVal) smsLines.push('• Notes/Drinks: ' + detailsVal);
+      } else if (pagePath.includes('security') || (serviceVal && serviceVal.toLowerCase().includes('security'))) {
+        smsLines.push('🛡️ RODRIGUEZ SECURITY QUOTE REQUEST');
+        if (nameVal) smsLines.push('• Name: ' + nameVal);
+        if (emailVal) smsLines.push('• Email: ' + emailVal);
+        if (serviceVal) smsLines.push('• Coverage Needed: ' + serviceVal);
+        if (dateVal) smsLines.push('• Date: ' + dateVal);
+        if (detailsVal) smsLines.push('• Details: ' + detailsVal);
+      } else if (pagePath.includes('appliance') || applianceVal) {
+        smsLines.push('🔧 APPLIANCE REPAIR SERVICE CALL');
+        if (nameVal) smsLines.push('• Name: ' + nameVal);
+        if (phoneVal) smsLines.push('• Phone: ' + phoneVal);
+        if (applianceVal) smsLines.push('• Appliance: ' + applianceVal);
+        if (brandVal) smsLines.push('• Brand/Model: ' + brandVal);
+        if (detailsVal) smsLines.push('• Issue: ' + detailsVal);
+      } else if (pagePath.includes('maintenance') || propertyVal) {
+        smsLines.push('🏢 PROPERTY MAINTENANCE REQUEST');
+        if (nameVal) smsLines.push('• Name: ' + nameVal);
+        if (emailVal) smsLines.push('• Email: ' + emailVal);
+        if (propertyVal) smsLines.push('• Property: ' + propertyVal);
+        if (scopeVal) smsLines.push('• Scope: ' + scopeVal);
+        if (detailsVal) smsLines.push('• Work Details: ' + detailsVal);
+      } else {
+        smsLines.push('📩 INQUIRY - RODRIGUEZ ENTERPRISES');
+        if (nameVal) smsLines.push('• Name: ' + nameVal);
+        if (emailVal) smsLines.push('• Email: ' + emailVal);
+        if (serviceVal) smsLines.push('• Division: ' + serviceVal);
+        if (detailsVal) smsLines.push('• Details: ' + detailsVal);
+      }
+
+      var smsBody = smsLines.join('\n');
+
+      // Copy text to clipboard as safety fallback
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(smsBody).catch(function () {});
+      }
+
+      var isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+      var smsUri = 'sms:+16304657063' + (isIOS ? '&' : '?') + 'body=' + encodeURIComponent(smsBody);
+
       var successEl = form.parentElement.querySelector('.form-success');
       if (successEl) {
+        successEl.innerHTML =
+          '<div style="font-size: 1.15rem; font-weight: 700; color: #4ade80; margin-bottom: 6px; display: flex; align-items: center; gap: 8px;">' +
+            '<span style="background: rgba(74, 222, 128, 0.2); width: 26px; height: 26px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 0.9rem;">✓</span>' +
+            '<span>Opening your Messages app...</span>' +
+          '</div>' +
+          '<div style="margin-bottom: 14px; line-height: 1.5; color: #ffffff;">' +
+            'Your request has been pre-filled into a text for <strong>(630) 465-7063</strong>. Just review and hit <strong>Send</strong>!' +
+          '</div>' +
+          '<div style="display: flex; gap: 12px; flex-wrap: wrap; align-items: center;">' +
+            '<a href="' + smsUri + '" class="btn btn-primary" style="padding: 10px 18px; font-size: 0.95rem; display: inline-flex; align-items: center; gap: 8px;">' +
+              '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>' +
+              '<span>Open Text App Again</span>' +
+            '</a>' +
+            '<span style="font-size: 0.85rem; color: var(--paper-dim);">📋 Details also copied to clipboard!</span>' +
+          '</div>';
         successEl.classList.add('show');
         successEl.setAttribute('tabindex', '-1');
         successEl.focus();
       }
-      form.reset();
+
+      // Automatically launch native SMS application with prefilled message
+      setTimeout(function () {
+        window.location.href = smsUri;
+      }, 200);
     });
   });
 
