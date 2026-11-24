@@ -474,20 +474,8 @@ document.addEventListener('DOMContentLoaded', function () {
       var successEl = form.parentElement.querySelector('.form-success');
       if (successEl) {
         successEl.innerHTML =
-          '<div style="font-size: 1.15rem; font-weight: 700; color: #4ade80; margin-bottom: 6px; display: flex; align-items: center; gap: 8px;">' +
-            '<span style="background: rgba(74, 222, 128, 0.2); width: 26px; height: 26px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 0.9rem;">✓</span>' +
-            '<span>Opening your Messages app...</span>' +
-          '</div>' +
-          '<div style="margin-bottom: 14px; line-height: 1.5; color: #ffffff;">' +
-            'Your request has been pre-filled into a text for <strong>(630) 465-7063</strong>. Just review and hit <strong>Send</strong>!' +
-          '</div>' +
-          '<div style="display: flex; gap: 12px; flex-wrap: wrap; align-items: center;">' +
-            '<a href="' + smsUri + '" class="btn btn-primary" style="padding: 10px 18px; font-size: 0.95rem; display: inline-flex; align-items: center; gap: 8px;">' +
-              '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>' +
-              '<span>Open Text App Again</span>' +
-            '</a>' +
-            '<span style="font-size: 0.85rem; color: var(--paper-dim);">📋 Details also copied to clipboard!</span>' +
-          '</div>';
+          '<div style="font-size: 1.05rem; font-weight: 700; color: #4ade80; margin-bottom: 4px;">Opening your text app...</div>' +
+          '<div style="margin-bottom: 10px; font-size: 0.9rem; color: var(--paper-dim);">If your messaging app did not open automatically, <a href="' + smsUri + '" style="color: #fff; text-decoration: underline; font-weight: 600;">tap here to send your text</a>.</div>';
         successEl.classList.add('show');
         successEl.setAttribute('tabindex', '-1');
         successEl.focus();
