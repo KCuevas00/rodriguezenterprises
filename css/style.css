@@ -3529,7 +3529,9 @@ body.drawer-open .floating-contact-widget,
 
 /* Glow highlight pulse when user clicks Book Package or anchor links */
 .vibez-direct-contact-box.highlight-pulse,
-.service-direct-contact-box.highlight-pulse {
+.service-direct-contact-box.highlight-pulse,
+.vibez-form-panel.highlight-pulse,
+.form-panel.highlight-pulse {
   animation: contactGlowPulse 2.2s cubic-bezier(0.22, 1, 0.36, 1);
 }
 

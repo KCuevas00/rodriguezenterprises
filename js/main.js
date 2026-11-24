@@ -237,6 +237,10 @@ document.addEventListener('DOMContentLoaded', function () {
   var textBtnText = document.getElementById('vibezTextBtnText');
 
   function selectAndScrollToPackage(pkgName) {
+    if (typeof syncPackageSelection === 'function') {
+      syncPackageSelection(pkgName);
+    }
+
     var pkgData = pkgDetailsMap[pkgName] || {
       title: pkgName + ' Package',
       details: 'Tailored for your event',
@@ -277,6 +281,13 @@ document.addEventListener('DOMContentLoaded', function () {
       });
       if (window.history && window.history.pushState) {
         window.history.pushState(null, null, '#quote');
+      }
+
+      var formPanel = target.querySelector('.vibez-form-panel') || target.querySelector('.form-panel') || target;
+      if (formPanel) {
+        formPanel.classList.remove('highlight-pulse');
+        void formPanel.offsetWidth; // re-flow to restart animation
+        formPanel.classList.add('highlight-pulse');
       }
     }
 
